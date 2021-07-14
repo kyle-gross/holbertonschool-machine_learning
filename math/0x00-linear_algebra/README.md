@@ -97,7 +97,6 @@ To check that pip has been successfully downloaded, use `pip -V`. Your output sh
 ```
     $ pip -V
     pip 19.1.1 from /usr/local/lib/python3.5/dist-packages/pip (python 3.5)
-    
 ```
 
 ### Installing numpy 1.15, scipy 1.3, and pycodestyle 2.5
