@@ -413,8 +413,6 @@ Write a function `def mat_mul(mat1, mat2):` that performs matrix multiplication:
 *   Directory: `math/0x00-linear_algebra`
 *   File: `8-ridin_bareback.py`
 
-Done?! Help
-
 
 ### 9\. Let The Butcher Slice It
 
