@@ -95,7 +95,6 @@ _Python 3.5 comes pre-installed on Ubuntu 16.04. How convenient! You can confirm
     wget https://bootstrap.pypa.io/get-pip.py
     sudo python3 get-pip.py
     rm get-pip.py
-    
 ```
 
 To check that pip has been successfully downloaded, use `pip -V`. Your output should look like:
@@ -110,7 +109,6 @@ To check that pip has been successfully downloaded, use `pip -V`. Your output sh
     $ pip install --user numpy==1.15
     $ pip install --user scipy==1.3
     $ pip install --user pycodestyle==2.5
-    
 ```
 
 To check that all have been successfully downloaded, use `pip list`.
@@ -144,7 +142,6 @@ Complete the following source code (found below):
     alexa@ubuntu-xenial:0x00-linear_algebra$ wc -l 0-slice_me_up.py 
     8 0-slice_me_up.py
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -174,7 +171,6 @@ Complete the following source code (found below):
     alexa@ubuntu-xenial:0x00-linear_algebra$ wc -l 1-trim_me_down.py 
     6 1-trim_me_down.py
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -205,7 +201,6 @@ Write a function `def matrix_shape(matrix):` that calculates the shape of a matr
     [2, 2]
     [2, 3, 5]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -241,7 +236,6 @@ Write a function `def matrix_transpose(matrix):` that returns the transpose of a
     [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10], [11, 12, 13, 14, 15], [16, 17, 18, 19, 20], [21, 22, 23, 24, 25], [26, 27, 28, 29, 30]]
     [[1, 6, 11, 16, 21, 26], [2, 7, 12, 17, 22, 27], [3, 8, 13, 18, 23, 28], [4, 9, 14, 19, 24, 29], [5, 10, 15, 20, 25, 30]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -342,7 +336,6 @@ Write a function `def cat_arrays(arr1, arr2):` that concatenates two arrays:
     [1, 2, 3, 4, 5]
     [6, 7, 8]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -385,7 +378,6 @@ Write a function `def cat_matrices2D(mat1, mat2, axis=0):` that concatenates two
     [[1, 2], [3, 4], [5, 6]]
     [[1, 2, 7], [3, 4, 8]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -418,7 +410,6 @@ Write a function `def mat_mul(mat1, mat2):` that performs matrix multiplication:
     alexa@ubuntu-xenial:0x00-linear_algebra$ ./8-main.py
     [[11, 14, 17, 20], [23, 30, 37, 44], [35, 46, 57, 68]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -467,7 +458,6 @@ Complete the following source code (found below):
     alexa@ubuntu-xenial:0x00-linear_algebra$ wc -l 9-let_the_butcher_slice_it.py 
     10 9-let_the_butcher_slice_it.py
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -503,7 +493,6 @@ Write a function `def np_shape(matrix):` that calculates the shape of a `numpy.n
     (0,)
     (2, 2, 5)
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -562,7 +551,6 @@ Write a function `def np_transpose(matrix):` that transposes `matrix`:
      [[11 12 13 14 15]
       [16 17 18 19 20]]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -626,7 +614,6 @@ Write a function `def np_elementwise(mat1, mat2):` that performs element-wise ad
      [[ 5.5 11.  16.5]
      [22.  27.5 33. ]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -668,7 +655,6 @@ Write a function `def np_cat(mat1, mat2, axis=0)` that concatenates two matrices
     [[11 22 33  7]
      [44 55 66  8]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
@@ -704,7 +690,6 @@ Write a function `def np_matmul(mat1, mat2):` that performs matrix multiplicatio
     [[ 550]
      [1342]]
     alexa@ubuntu-xenial:0x00-linear_algebra$ 
-    
 ```
 
 **Repo:**
