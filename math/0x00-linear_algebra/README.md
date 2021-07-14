@@ -3,8 +3,6 @@
 
 *   _US Program > Trimester 3 - Machine Learning > MM1000_
 *   By Alexa Orrico, Software Engineer at Holberton School
-*   Ongoing project - started 07-12-2021, must end by 07-17-2021 (in 3 days) - you're done with 0% of tasks.
-*   Checker will be released at 07-14-2021 12:00 PM
 *   QA review fully automated.
 
 ## Concepts
@@ -12,33 +10,31 @@
 
 _For this project, students are expected to look at this concept:_
 
-*   [Using Vagrant on your personal computer](/concepts/788)
-
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/54daaf81421a9b894688.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210713%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210713T183545Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=30550615ccd8951c712d91466008013a5232302bfa18a5d0308af17c14fdb8c8)
+*   [Using Vagrant on your personal computer](https://intranet.hbtn.io/concepts/788)
 
 ## Resources
 ---------
 
 **Read or watch**:
 
-*   [Introduction to vectors](/rltoken/Vz8UCsgTLVvoXBF2Rixs9g "Introduction to vectors")
-*   [What is a matrix?](/rltoken/CsoiVR8RSIjVvxKxDOjkZA "What is a matrix?") (_not [the matrix](/rltoken/rp4JQiCYInKj5B-OQ0QLEQ "the matrix")_)
-*   [Transpose](/rltoken/b3eS2ANvcUgzdxpEp8MR1g "Transpose")
-*   [Understanding the dot product](/rltoken/57hK-YR5M1ViaJTY_1Q7rA "Understanding the dot product")
-*   [Matrix Multiplication](/rltoken/ywBPzuAIj5F9_jslm5VctQ "Matrix Multiplication")
-*   [What is the relationship between matrix multiplication and the dot product?](/rltoken/moDfbJAgq8cKGd_ZkAcg1g "What is the relationship between matrix multiplication and the dot product?")
-*   [The Dot Product, Matrix Multiplication, and the Magic of Orthogonal Matrices](/rltoken/QYruCa_SgJ84ObGWouAAOg "The Dot Product, Matrix Multiplication, and the Magic of Orthogonal Matrices") (_advanced_)
-*   [numpy tutorial](/rltoken/mij99Rh62J-EK8q8Geg61A "numpy tutorial") (_until Shape Manipulation (excluded)_)
-*   [numpy basics](/rltoken/4EtEXwaT889vFRDe2GNWFA "numpy basics") (_until Universal Functions (included)_)
-*   [array indexing](/rltoken/P3NocsHlXhuVOM11vy_lfQ "array indexing")
-*   [numerical operations on arrays](/rltoken/CkKvSHIWEgYYgeu6ZKXlhA "numerical operations on arrays")
-*   [Broadcasting](/rltoken/vgd5aS-Q4IhHnU3VtL4H1Q "Broadcasting")
-*   [numpy mutations and broadcasting](/rltoken/xmFkq39nBOw1yPIq2tTEtA "numpy mutations and broadcasting")
-*   [numpy.ndarray](/rltoken/Mmsqv-PglqCK2_i0qvzEPQ "numpy.ndarray")
-*   [numpy.ndarray.shape](/rltoken/Rk3tjU0Q92ZL0_TbgREltw "numpy.ndarray.shape")
-*   [numpy.transpose](/rltoken/9EZKKo7SuIBO7xVx5tDnPw "numpy.transpose")
-*   [numpy.ndarray.transpose](/rltoken/y_yr1VvP03nxvU8V7WxqmQ "numpy.ndarray.transpose")
-*   [numpy.matmul](/rltoken/fdfxCKPituTFIvEIWMPMGA "numpy.matmul")
+*   [Introduction to vectors](https://www.youtube.com/watch?v=fNk_zzaMoSs "Introduction to vectors")
+*   [What is a matrix?](https://math.stackexchange.com/questions/2782717/what-exactly-is-a-matrix "What is a matrix?") (_not [the matrix](https://www.imdb.com/title/tt0133093/ "the matrix")_)
+*   [Transpose](https://en.wikipedia.org/wiki/Transpose "Transpose")
+*   [Understanding the dot product](https://betterexplained.com/articles/vector-calculus-understanding-the-dot-product/ "Understanding the dot product")
+*   [Matrix Multiplication](https://www.youtube.com/watch?v=BzWahqwaS8k "Matrix Multiplication")
+*   [What is the relationship between matrix multiplication and the dot product?](https://www.quora.com/What-is-the-relationship-between-matrix-multiplication-and-the-dot-product "What is the relationship between matrix multiplication and the dot product?")
+*   [The Dot Product, Matrix Multiplication, and the Magic of Orthogonal Matrices](https://www.youtube.com/watch?v=rW2ypKLLxGk "The Dot Product, Matrix Multiplication, and the Magic of Orthogonal Matrices") (_advanced_)
+*   [numpy tutorial](https://numpy.org/doc/stable/user/quickstart.html "numpy tutorial") (_until Shape Manipulation (excluded)_)
+*   [numpy basics](https://www.oreilly.com/library/view/python-for-data/9781449323592/ch04.html "numpy basics") (_until Universal Functions (included)_)
+*   [array indexing](https://docs.scipy.org/doc/numpy-1.15.0/reference/arrays.indexing.html#basic-slicing-and-indexing "array indexing")
+*   [numerical operations on arrays](https://scipy-lectures.org/intro/numpy/operations.html "numerical operations on arrays")
+*   [Broadcasting](https://numpy.org/doc/stable/user/basics.broadcasting.html "Broadcasting")
+*   [numpy mutations and broadcasting](https://towardsdatascience.com/two-cool-features-of-python-numpy-mutating-by-slicing-and-broadcasting-3b0b86e8b4c7?gi=477477534a69 "numpy mutations and broadcasting")
+*   [numpy.ndarray](https://docs.scipy.org/doc/numpy-1.15.0/reference/arrays.ndarray.html "numpy.ndarray")
+*   [numpy.ndarray.shape](https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.ndarray.shape.html#numpy.ndarray.shape "numpy.ndarray.shape")
+*   [numpy.transpose](https://numpy.org/doc/stable/reference/generated/numpy.transpose.html "numpy.transpose")
+*   [numpy.ndarray.transpose](https://numpy.org/doc/stable/reference/generated/numpy.ndarray.transpose.html "numpy.ndarray.transpose")
+*   [numpy.matmul](https://numpy.org/doc/stable/reference/generated/numpy.matmul.html "numpy.matmul")
 
 ## Learning Objectives
 -------------------
