@@ -15,17 +15,19 @@ def cat_matrices2D(mat1, mat2, axis=0):
     * If the two matrices cannot be concatenated, return None
     """
     new_mat = []
+    [new_mat.append(row.copy()) for row in mat1]
 
     if axis < 0:
         return None
 
     if axis == 0:
-        [new_mat.append(row.copy()) for row in mat1]
+        if len(mat1[0]) != len(mat2[0]):
+            return None
         [new_mat.append(row.copy()) for row in mat2]
+        return new_mat
 
-    if axis != 0:
-        [new_mat.append(row.copy()) for row in mat1]
-        for i in range(len(new_mat)):
-            [new_mat[i].append(mat2[i][0])]
+    for i in range(len(new_mat)):
+        for j in mat2[i].copy():
+            new_mat[i].append(j)
 
     return new_mat
