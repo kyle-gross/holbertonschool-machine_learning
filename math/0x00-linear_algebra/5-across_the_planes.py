@@ -14,24 +14,8 @@ def add_matrices2D(mat1, mat2):
     * You must return a new matrix
     * If mat1 and mat2 are not the same shape, return None
     """
-    if matrix_shape(mat1) != matrix_shape(mat2):
+    if len(mat1) != len(mat2) or len(mat1[0]) != len(mat2[0]):
         return None
 
     return [[mat1[i][j] + mat2[i][j] for j in range(len(mat1[0]))]
             for i in range(len(mat1))]
-
-
-def matrix_shape(matrix):
-    """
-    Calculates the shape of a matrix.
-    * You can assume all elements in the same dimension are of the same
-      type/shape
-    * The shape should be returned as a list of integers
-    """
-    shape = []
-
-    if type(matrix) is list:
-        shape.append(len(matrix))
-        shape.extend(matrix_shape(matrix[0]))
-
-    return shape
