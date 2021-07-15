@@ -12,13 +12,10 @@ def matrix_shape(matrix):
       type/shape
     * The shape should be returned as a list of integers
     """
-
     shape = []
 
-    shape.append(len(matrix))
-    shape.append(len(matrix[0]))
-
     if type(matrix[0][0]) is list:
-        shape.append(len(matrix[0][0]))
+        shape.append(len(matrix))
+        shape.extend(matrix_shape(matrix[0]))
 
     return shape
