@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import numpy as np
 """
 Contains the function 'np_cat' which concatenates 2 matrices along
 a specific axis (using numpy)
@@ -9,6 +8,7 @@ a specific axis (using numpy)
     * You may use: import numpy as np
     * You can assume that mat1 and mat2 are never empty
 """
+import numpy as np
 
 
 def np_cat(mat1, mat2, axis=0):
