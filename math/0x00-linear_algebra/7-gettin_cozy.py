@@ -26,6 +26,9 @@ def cat_matrices2D(mat1, mat2, axis=0):
         [new_mat.append(row.copy()) for row in mat2]
         return new_mat
 
+    if len(mat1) != len(mat2):
+        return None
+
     for i in range(len(new_mat)):
         for j in mat2[i].copy():
             new_mat[i].append(j)
