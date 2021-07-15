@@ -2,15 +2,15 @@
 """
 Contains the function 'add_arrays' which returns the addition of
 two arrays
+    * You can assume that arr1 and arr2 are lists of ints/floats
+    * You must return a new list
+    * If arr1 and arr2 are not the same shape, return None
 """
 
 
 def add_arrays(arr1, arr2):
     """
     Adds two arrays
-    * You can assume that arr1 and arr2 are lists of ints/floats
-    * You must return a new list
-    * If arr1 and arr2 are not the same shape, return None
     """
     new_arr = []
 
