@@ -1,1 +1,1 @@
-# Linear Algebra practice
+# ML Math Projects
