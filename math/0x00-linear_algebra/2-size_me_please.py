@@ -14,7 +14,7 @@ def matrix_shape(matrix):
     """
     shape = []
 
-    if type(matrix[0][0]) is list:
+    if type(matrix) is list:
         shape.append(len(matrix))
         shape.extend(matrix_shape(matrix[0]))
 
