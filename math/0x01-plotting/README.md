@@ -115,8 +115,6 @@ Complete the following source code to plot `y` as a line graph:
     # your code here
 ```
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/664b2543b48ef4918687.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cc92f32dd80705971f570a19efcbc5ac8c3f807671e816789798f5f449fa18d0)
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -146,8 +144,6 @@ Complete the following source code to plot `x ↦ y` as a scatter plot:
     # your code here
 ```
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/1b143961d254e65afa2c.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=29e9b3056858451f467454c87b8addb0cd572241925767fb8dcbdada864f373b)
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -176,8 +172,6 @@ Complete the following source code to plot `x ↦ y` as a line graph:
     
     # your code here
 ```
-
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/2b6334feb069ae1b6014.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ed6a99f147702251c3ca9a1745e879e1da21cb6ca2c05489d09fbf370565bd2e)
 
 **Repo:**
 
@@ -213,8 +207,6 @@ Complete the following source code to plot `x ↦ y1` and `x ↦ y2` as line gra
     # your code here
 ```
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/39eac4e8c8eb71469784.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=06fee6feadf73e4976d00dbf07723023e8f86e14f6cfd4951f0afa18c1708c5e)
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -241,8 +233,6 @@ Complete the following source code to plot a histogram of student scores for a p
     
     # your code here
 ```
-
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/10a48ad296d16ee8fb63.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=67874b0e1817538ba3f3b4d7a801f245bd213dec44dbf3e1ddeed822a9d029a3)
 
 **Repo:**
 
@@ -290,8 +280,6 @@ Complete the following source code to plot all 5 previous graphs in one figure:
     # your code here
 ```
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/9/e58d423ffd060a779753.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=05b554bc2f1228f3c1189dab732691c524130caaf90868998c967b447fb18855)
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -329,8 +317,6 @@ Complete the following source code to plot a stacked bar graph:
     
     # your code here
 ```
-
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2018/10/8058e8f96e697612d50d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUWMNL5ANN%2F20210719%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210719T173101Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8db0586e36b1fd0493db3decf9101eb9e1958d4acb155a26058f4743a0415319)
 
 **Repo:**
 
