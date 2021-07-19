@@ -114,7 +114,6 @@ Complete the following source code to plot `y` as a line graph:
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -143,7 +142,6 @@ Complete the following source code to plot `x ↦ y` as a scatter plot:
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -172,7 +170,6 @@ Complete the following source code to plot `x ↦ y` as a line graph:
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -206,7 +203,6 @@ Complete the following source code to plot `x ↦ y1` and `x ↦ y2` as line gra
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -233,7 +229,6 @@ Complete the following source code to plot a histogram of student scores for a p
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -279,7 +274,6 @@ Complete the following source code to plot all 5 previous graphs in one figure:
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
@@ -317,7 +311,6 @@ Complete the following source code to plot a stacked bar graph:
     
     # your code here
 ```
-
 **Repo:**
 
 *   GitHub repository: `holbertonschool-machine_learning`
