@@ -23,6 +23,9 @@ def poly_integral(poly, C=0):
     if type(poly) is not list or type(C) is not int:
         return None
 
+    if len(poly) == 0:
+        return None
+
     integrals = [C]
 
     if poly == [0]:
