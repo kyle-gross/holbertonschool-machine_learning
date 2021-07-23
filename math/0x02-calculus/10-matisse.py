@@ -20,6 +20,9 @@ def poly_derivative(poly):
     if type(poly) is not list:
         return None
 
+    if len(poly) == 0:
+        return None
+
     deriv = [poly[i] * i for i in range(1, len(poly))]
 
     return deriv if len(deriv) > 0 else [0]
