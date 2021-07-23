@@ -8,7 +8,8 @@ of a polynomial.
         * Example: if f(x) = x^3 + 3x +5, poly is equal to [5, 3, 0, 1]
     * If poly is not valid, return None
     * If the derivative is 0, return [0]
-    * Return a new list of coefficients representing the derivative of the polynomial
+    * Return a new list of coefficients representing the
+      derivative of the polynomial
 """
 
 
