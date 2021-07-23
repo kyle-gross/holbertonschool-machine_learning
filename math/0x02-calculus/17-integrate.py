@@ -28,6 +28,9 @@ def poly_integral(poly, C=0):
 
     integrals = [C]
 
+    if poly is [0]:
+        return integrals
+
     def int_check(x): return int(x) if x.is_integer() else x
 
     [integrals.append(int_check(poly[i] / (i + 1))) for i in range(len(poly))
