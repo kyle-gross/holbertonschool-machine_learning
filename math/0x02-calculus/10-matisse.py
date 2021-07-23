@@ -17,7 +17,9 @@ def poly_derivative(poly):
     """
     Calculates the derivative of a polynomial.
     """
-    if len(poly) == 0 or type(poly) is not list:
+    if type(poly) is not list:
         return None
 
-    return [poly[i] * i for i in range(1, len(poly))]
+    deriv = [poly[i] * i for i in range(1, len(poly))]
+
+    return deriv if len(deriv) > 0 else [0]
