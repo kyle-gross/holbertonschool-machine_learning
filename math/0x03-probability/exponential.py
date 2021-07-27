@@ -2,6 +2,7 @@
 """
 Contains the Exponential class which represents an exponential distribution
 """
+E = 2.7182818285
 
 
 class Exponential():
@@ -36,3 +37,16 @@ class Exponential():
                 raise ValueError('data must contain multiple values')
             else:
                 self.lambtha = float(len(data) / sum(data))
+
+    def pdf(self, x):
+        """
+        * Calculates the value of the PDF for a given time period
+        * <x> is the time period
+        * Returns the PDF value for <x>
+        * If <x> is out of range, return 0
+        Formula: f(x;λ) = λe^(-λx)
+        """
+        if x < 0:
+            return 0
+        λ = self.lambtha
+        return λ * E ** (-λ * x)
