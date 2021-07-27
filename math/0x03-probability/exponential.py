@@ -62,4 +62,4 @@ class Exponential():
         if x < 0:
             return 0
         λ = self.lambtha
-        return 1 - E ** -(λ ** x)
+        return 1 - E ** (-λ * x)
