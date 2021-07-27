@@ -2,6 +2,8 @@
 """
 Contains the Normal class which represents a normal distribution
 """
+PI = 3.1415926536
+E = 2.7182818285
 
 
 class Normal():
@@ -59,3 +61,15 @@ class Normal():
         * Returns the x-value of <z>
         """
         return (z * self.stddev) + self.mean
+
+    def pdf(self, x):
+        """
+        * Calculates the value of the PDF for a given x-value
+        * <x> is the x-value
+        * Returns the PDF value for <x>
+        Formula: 1/σ(2π^0.5)*e^-0.5*(x-μ/σ)^2
+        """
+        μ = self.mean
+        σ = self.stddev
+        exponent = -0.5 * ((x - μ) / σ) ** 2
+        return 1 / (σ * (2 * PI) ** 0.5) * (E ** exponent)
