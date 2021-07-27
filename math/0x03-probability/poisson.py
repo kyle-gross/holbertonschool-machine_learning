@@ -2,7 +2,6 @@
 """
 Contains the Poisson class which represents a poisson distribution
 """
-PI = 3.1415926536
 E = 2.7182818285
 
 
