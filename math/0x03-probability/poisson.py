@@ -46,7 +46,7 @@ class Poisson():
             * If <k> is not an integer, convert it to an integer
             * If <k> is out of range, return 0
         * Returns the PMF value for k
-        The Poisson Distribution formula is: P(x; μ) = (e^-μ) (μ^x) / x!
+        The Poisson Distribution pmf is: P(x; μ) = (e^-μ * μ^x) / x!
         """
         if type(k) is not int:
             k = int(k)
@@ -57,3 +57,23 @@ class Poisson():
         for i in range(k):
             factorial *= (i + 1)
         return (E ** -μ) * (μ ** k) / factorial
+
+    def cdf(self, k):
+        """
+        *  Calculates the value of the CDF for a given number of “successes”
+        * <k> is the number of “successes”
+            * If <k> is not an integer, convert it to an integer
+            * If <k> is out of range, return 0
+        * Returns the CDF value for k
+        Poisson cmf formula: F(x; λ) = ∑xi=0 ((e^-λ * λ^i) / i!)
+            or
+        Summation of pmf's within range 0 - k
+        """
+        if type(k) is not int:
+            k = int(k)
+        if k < 0:
+            return 0
+        cdf = 0
+        for i in range(k + 1):
+            cdf += self.pmf(i)
+        return cdf
