@@ -30,9 +30,9 @@ class Binomial():
               'data must contain multiple values'
         """
         if data is None:
-            if n < 0:
+            if n <= 0:
                 raise ValueError('n must be a positive value')
-            elif p < 0 or p > 1:
+            elif p <= 0 or p >= 1:
                 raise ValueError('p must be greater than 0 and less than 1')
             else:
                 self.n = n
@@ -41,7 +41,7 @@ class Binomial():
             if type(data) is not list:
                 raise TypeError('data must be a list')
             elif len(data) < 2:
-                raise TypeError('data must contain multiple values')
+                raise ValueError('data must contain multiple values')
             else:
                 mean = float(sum(data) / len(data))
                 deviations = [(x - mean) ** 2 for x in data]
