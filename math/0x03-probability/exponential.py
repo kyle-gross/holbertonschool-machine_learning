@@ -50,3 +50,16 @@ class Exponential():
             return 0
         λ = self.lambtha
         return λ * E ** (-λ * x)
+
+    def cdf(self, x):
+        """
+        * Calculates the value of the CDF for a given time period
+        * <x> is the time period
+        * Returns the PDF value for <x>
+        * If <x> is out of range, return 0
+        Formula: f(x;λ) = 1 - e^(-λx)
+        """
+        if x < 0:
+            return 0
+        λ = self.lambtha
+        return 1 - E ** -(λ ** x)
