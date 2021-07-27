@@ -73,3 +73,17 @@ class Normal():
         σ = self.stddev
         exponent = -0.5 * ((x - μ) / σ) ** 2
         return 1 / (σ * (2 * PI) ** 0.5) * (E ** exponent)
+
+    def cdf(self, x):
+        """
+        * Calculates the value of the CDF for a given x-value
+        * <x> is the x-value
+        * Returns the CDF value for <x>
+        Formula: 0.5*[1+erf(x-μ/σ*2**0.5)]
+        """
+        μ = self.mean
+        σ = self.stddev
+        x = (x - μ) / (σ * 2 ** 0.5)
+        erf = (2 / PI ** 0.5) * (x - x ** 3 / 3 + x ** 5 / 10 - x ** 7 / 42
+                                 + x ** 9 / 216)
+        return 0.5 * (1 + erf)
