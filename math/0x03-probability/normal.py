@@ -43,3 +43,19 @@ class Normal():
                 deviations = [(x - self.mean) ** 2 for x in data]
                 variance = sum(deviations) / n
                 self.stddev = variance ** 0.5
+
+    def z_score(self, x):
+        """
+        * Calculates the z-score of a given x-value
+        * <x> is the x-value
+        * Returns the z-score of <x>
+        """
+        return (x - self.mean) / self.stddev
+
+    def x_value(self, z):
+        """
+        * Calculates the x-value of a given z-score
+        * <z> is the z-score
+        * Returns the x-value of <z>
+        """
+        return (z * self.stddev) + self.mean
