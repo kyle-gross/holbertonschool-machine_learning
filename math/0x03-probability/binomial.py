@@ -52,3 +52,25 @@ class Binomial():
                 p = float(mean / n)
                 self.n = n
                 self.p = p
+
+    def pmf(self, k):
+        """
+        * Calculates the value of the PMF for a given number of “successes”
+        * <k> is the number of “successes”
+            * If <k> is not an integer, convert it to an integer
+            * If <k> is out of range, return 0
+        * Returns the PMF value for <k>
+        Formula: (n..k)*p^k*q^n-k
+        """
+        if type(k) is not int:
+            k = int(k)
+        if k < 0:
+            return 0
+        n = self.n
+        p = self.p
+        def factorial(x): return x if x <= 1 else x * factorial(x - 1)
+        n_factorial = factorial(n)
+        k_factorial = factorial(k)
+        nk_factorial = factorial(n - k)
+        nk = n_factorial / (k_factorial * nk_factorial)
+        return nk * p ** k * (1 - p) ** (n - k)
