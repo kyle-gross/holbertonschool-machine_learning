@@ -78,3 +78,20 @@ class Binomial():
         nk_factorial = factorial(n - k)
         nk = n_factorial / (k_factorial * nk_factorial)
         return nk * p ** k * (1 - p) ** (n - k)
+
+    def cdf(self, k):
+        """
+        * Calculates the value of the CDF for a given number of “successes”
+        * <k> is the number of “successes”
+            * If <k> is not an integer, convert it to an integer
+            * If <k> is out of range, return 0
+        * Returns the CDF value for k
+        """
+        if type(k) is not int:
+            k = int(k)
+        if k < 0:
+            return 0
+        cdf = 0
+        for i in range(k + 1):
+            cdf += self.pmf(i)
+        return cdf
