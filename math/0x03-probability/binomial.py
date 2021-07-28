@@ -68,6 +68,7 @@ class Binomial():
             return 0
         n = self.n
         p = self.p
+
         def factorial(x):
             if x == 0:
                 return 1
