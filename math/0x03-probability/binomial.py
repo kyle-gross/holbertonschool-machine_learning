@@ -68,7 +68,10 @@ class Binomial():
             return 0
         n = self.n
         p = self.p
-        def factorial(x): return x if x <= 1 else x * factorial(x - 1)
+        def factorial(x):
+            if x == 0:
+                return 1
+            return x if x <= 1 else x * factorial(x - 1)
         n_factorial = factorial(n)
         k_factorial = factorial(k)
         nk_factorial = factorial(n - k)
