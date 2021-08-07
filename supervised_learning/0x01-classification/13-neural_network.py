@@ -117,7 +117,7 @@ class NeuralNetwork():
         * @alpha: learning rate
         Updates private attributes __W1, __W2, __b1, __b2
         """
-        m = X.shape[1]
+        m = Y.shape[1]
         dz2 = A2 - Y
         dw2 = (1/m)*(np.matmul(dz2, A1.T))
         db2 = (1/m)*(np.sum(dz2, axis=1, keepdims=True))
