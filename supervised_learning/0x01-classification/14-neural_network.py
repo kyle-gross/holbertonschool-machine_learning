@@ -2,7 +2,6 @@
 """
 Contains the class NeuralNetwork.
 """
-from typing import Type
 import numpy as np
 
 
