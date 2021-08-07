@@ -2,7 +2,6 @@
 """
 Contains the class Neuron.
 """
-from typing import Type
 import numpy as np
 
 
