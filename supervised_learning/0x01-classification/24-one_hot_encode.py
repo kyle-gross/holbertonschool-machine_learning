@@ -16,6 +16,6 @@ def one_hot_encode(Y, classes):
         return None
     if classes < 2 or classes < np.max(Y):
         return None
-    targets = Y.reshape(-1)
-    onehot_encode = np.eye(classes)[targets]
+    onehot_encode = np.zeros((classes, len(Y)))
+    onehot_encode[Y, np.arange(len(Y))] = 1
     return onehot_encode
