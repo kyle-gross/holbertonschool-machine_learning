@@ -35,7 +35,8 @@ class DeepNeuralNetwork():
             prev = nx
             for i in range(len(layers)):
                 if type(layers[i]) is not int or layers[i] < 1:
-                    raise TypeError('layers must be a list of positive integers')
+                    raise TypeError('layers must be a list of \
+                                    positive integers')
                 w = np.random.randn(layers[i], prev) * np.sqrt(2/prev)
                 prev = layers[i]
                 self.__weights['W{}'.format(i + 1)] = w
