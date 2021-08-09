@@ -28,14 +28,14 @@ class DeepNeuralNetwork():
             raise ValueError('nx must be a positive integer')
         elif type(layers) is not list or len(layers) == 0:
             raise TypeError('layers must be a list of positive integers')
-        elif min(layers) < 1:
-            raise TypeError('layers must be a list of positive integers')
         else:
             self.__L = len(layers)
             self.__cache = {}
             self.__weights = {}
             prev = nx
             for i in range(len(layers)):
+                if type(layers[i]) is not int or layers[i] < 1:
+                    raise TypeError('layers must be a list of positive integers')
                 w = np.random.randn(layers[i], prev) * np.sqrt(2/prev)
                 prev = layers[i]
                 self.__weights['W{}'.format(i + 1)] = w
@@ -111,7 +111,7 @@ class DeepNeuralNetwork():
         m = Y.shape[1]
         back_prop = {}
         for i in range(self.L, 0, -1):
-            A1 = cache['A{}'.format(i-1)]
+            A_next = cache['A{}'.format(i-1)]
             if i == self.L:
                 back_prop['dz{}'.format(i)] = (cache['A{}'.format(i)] - Y)
             else:
@@ -120,7 +120,7 @@ class DeepNeuralNetwork():
                 back_prop['dz{}'.format(i)] = \
                     (np.matmul(W.T, dz_prev)*(A*(1-A)))
             dz = back_prop['dz{}'.format(i)]
-            dW = (1/m)*(np.matmul(dz, A1.T))
+            dW = (1/m)*(np.matmul(dz, A_next.T))
             db = (1/m)*np.sum(dz, axis=1, keepdims=True)
             W = self.weights['W{}'.format(i)]
             self.__weights['W{}'.format(i)] = W - (alpha * dW)
