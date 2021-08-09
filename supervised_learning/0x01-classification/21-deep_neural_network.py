@@ -3,7 +3,6 @@
 Contains the class DeepNeuralNetwork.
 """
 import numpy as np
-from numpy.lib.function_base import gradient
 
 
 class DeepNeuralNetwork():
