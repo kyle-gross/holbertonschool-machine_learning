@@ -205,6 +205,6 @@ class DeepNeuralNetwork():
         try:
             with open(filename, 'rb') as input_file:
                 obj = pickle.load(input_file)
-        except:
+        except Exception:
             return None
         return obj
