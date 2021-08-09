@@ -1,3 +1,4 @@
 show_data.py
 show_multi_data.py
 *.pyc
+*.pkl
