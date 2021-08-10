@@ -96,8 +96,6 @@ class DeepNeuralNetwork():
             b = self.__weights['b{}'.format(i+1)]
             z = np.matmul(W, x) + b
             if i == self.L - 1:
-                if self.__activation == 'sig':
-                    act = self.sigmoid(z)
                 act = self.softmax(z)
             else:
                 if self.__activation == 'sig':
