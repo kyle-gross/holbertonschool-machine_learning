@@ -69,15 +69,29 @@ class DeepNeuralNetwork():
               dict.
         Return: output of neural network and cache
         """
+        def sigmoid(act):
+            """
+            Sigmoid activation function.
+            """
+            return 1/(1 + np.exp(-act))
+        
+        def softmax(act):
+            """
+            Softmax activation function.
+            """
+            return np.exp(act)/np.sum(np.exp(act), axis=0)
+
         self.__cache['A0'] = X
-        x = X
-        for i in range(self.__L):
+        for i in range(self.L):
             W = self.__weights['W{}'.format(i+1)]
+            x = self.__cache['A{}'.format(i)]
             b = self.__weights['b{}'.format(i+1)]
             z = np.matmul(W, x) + b
-            A = 1/(1 + np.exp(-z))
-            x = A
-            self.__cache['A{}'.format(i+1)] = A
+            if i == self.L - 1:
+                act = softmax(z)
+            else:
+                act = sigmoid(z)
+            self.__cache['A{}'.format(i+1)] = act
         return self.__cache['A{}'.format(self.__L)], self.__cache
 
     def cost(self, Y, A):
@@ -88,7 +102,8 @@ class DeepNeuralNetwork():
         Return: cost
         """
         m = A.shape[1]
-        return -(1/m)*(np.sum((Y*np.log(A))+(1-Y)*np.log(1.0000001-A)))
+        loss = np.sum(-Y * np.log(A))
+        return loss / m
 
     def evaluate(self, X, Y):
         """
@@ -98,10 +113,34 @@ class DeepNeuralNetwork():
         Return: Neuron's prediction and cost.
             * Prediction should be numpy.ndarray. Shape (1, m).
         """
+        def one_hot_encode(Y, classes):
+            """
+            Converts a numeric label vector into a one-hot matrix.
+            """
+            if type(Y) is not np.ndarray or type(classes) is not int:
+                return None
+            if classes < 2 or classes < np.max(Y):
+                return None
+            onehot_encode = np.zeros((classes, Y.size))
+            onehot_encode[Y, np.arange(Y.size)] = 1
+            return onehot_encode
+
+        def one_hot_decode(one_hot):
+            """
+            Converts a one-hot matrix into a vector of labels.
+            """
+            if type(one_hot) is not np.ndarray:
+                return None
+            if one_hot.ndim != 2:
+                return None
+            return np.argmax(one_hot, axis=0)
+
         output, A = self.forward_prop(X)
         cost = self.cost(Y, output)
-        output = np.where(output >= 0.5, 1, 0)
-        return output.astype(int), cost
+        classes = Y.shape[0]
+        decoded = one_hot_decode(output)
+        encode = one_hot_encode(decoded, classes)
+        return encode.astype(int), cost
 
     def gradient_descent(self, Y, cache, alpha=0.05):
         """
