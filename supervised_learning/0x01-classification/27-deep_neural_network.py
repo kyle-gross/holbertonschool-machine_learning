@@ -63,7 +63,7 @@ class DeepNeuralNetwork():
     def sigmoid(self, Z):
         """Sigmoid activation function"""
         return 1/(1 + np.exp(-Z))
-    
+
     def softmax(self, Z):
         """Softmax activation function"""
         return np.exp(Z)/np.sum(np.exp(Z), axis=0)
