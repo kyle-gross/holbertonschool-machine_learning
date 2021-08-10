@@ -79,7 +79,6 @@ class DeepNeuralNetwork():
     def tanh(self, Z):
         """Tanh activation function"""
         return np.tanh(Z)
-        # return (np.exp(Z)-np.exp(-Z)) / (np.exp(Z)+np.exp(-Z))
 
     def forward_prop(self, X):
         """
@@ -97,14 +96,16 @@ class DeepNeuralNetwork():
             b = self.__weights['b{}'.format(i+1)]
             z = np.matmul(W, x) + b
             if i == self.L - 1:
+                if self.__activation == 'sig':
+                    act = self.sigmoid(z)
                 act = self.softmax(z)
             else:
-                if self.activation == 'sig':
+                if self.__activation == 'sig':
                     act = self.sigmoid(z)
                 else:
                     act = self.tanh(z)
             self.__cache['A{}'.format(i+1)] = act
-        return self.__cache['A{}'.format(self.__L)], self.__cache
+        return self.__cache['A{}'.format(self.L)], self.__cache
 
     def cost(self, Y, A):
         """
@@ -171,9 +172,7 @@ class DeepNeuralNetwork():
             else:
                 A = cache['A{}'.format(i)]
                 dz_prev = back_prop['dz{}'.format(i+1)]
-                # back_prop['dz{}'.format(i)] = \
-                #     (np.matmul(W.T, dz_prev)*(A*(1-A)))
-                if self.activation == 'sig':
+                if self.__activation == 'sig':
                     back_prop['dz{}'.format(i)] = \
                         (np.matmul(W.T, dz_prev)*(A*(1-A)))
                 else:
