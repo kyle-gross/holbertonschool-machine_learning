@@ -101,7 +101,7 @@ class DeepNeuralNetwork():
             else:
                 if self.activation == 'sig':
                     act = self.sigmoid(z)
-                if self.activation == 'tanh':
+                else:
                     act = self.tanh(z)
             self.__cache['A{}'.format(i+1)] = act
         return self.__cache['A{}'.format(self.__L)], self.__cache
@@ -176,7 +176,7 @@ class DeepNeuralNetwork():
                 if self.activation == 'sig':
                     back_prop['dz{}'.format(i)] = \
                         (np.matmul(W.T, dz_prev)*(A*(1-A)))
-                if self.activation == 'tanh':
+                else:
                     back_prop['dz{}'.format(i)] = \
                         (np.matmul(W.T, dz_prev)*(1-(A**2)))
             dz = back_prop['dz{}'.format(i)]
