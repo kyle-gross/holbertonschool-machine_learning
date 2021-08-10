@@ -60,6 +60,14 @@ class DeepNeuralNetwork():
         """weights getter"""
         return self.__weights
 
+    def sigmoid(self, Z):
+        """Sigmoid activation function"""
+        return 1/(1 + np.exp(-Z))
+    
+    def softmax(self, Z):
+        """Softmax activation function"""
+        return np.exp(Z)/np.sum(np.exp(Z), axis=0)
+
     def forward_prop(self, X):
         """
         Calculates forward propagation of the neural network.
@@ -69,18 +77,6 @@ class DeepNeuralNetwork():
               dict.
         Return: output of neural network and cache
         """
-        def sigmoid(act):
-            """
-            Sigmoid activation function.
-            """
-            return 1/(1 + np.exp(-act))
-
-        def softmax(act):
-            """
-            Softmax activation function.
-            """
-            return np.exp(act)/np.sum(np.exp(act), axis=0)
-
         self.__cache['A0'] = X
         for i in range(self.L):
             W = self.__weights['W{}'.format(i+1)]
@@ -88,9 +84,9 @@ class DeepNeuralNetwork():
             b = self.__weights['b{}'.format(i+1)]
             z = np.matmul(W, x) + b
             if i == self.L - 1:
-                act = softmax(z)
+                act = self.softmax(z)
             else:
-                act = sigmoid(z)
+                act = self.sigmoid(z)
             self.__cache['A{}'.format(i+1)] = act
         return self.__cache['A{}'.format(self.__L)], self.__cache
 
