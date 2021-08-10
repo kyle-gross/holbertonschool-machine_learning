@@ -74,7 +74,7 @@ class DeepNeuralNetwork():
             Sigmoid activation function.
             """
             return 1/(1 + np.exp(-act))
-        
+
         def softmax(act):
             """
             Softmax activation function.
