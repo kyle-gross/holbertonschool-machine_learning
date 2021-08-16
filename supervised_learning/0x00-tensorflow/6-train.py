@@ -44,12 +44,14 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes, activations,
     init = tf.global_variables_initializer()
     with tf.Session() as sess:
         sess.run(init)
-        for i in range(iterations + 1 ):
-            if i % 100 == 0:
+        for i in range(iterations):
+            if i % 100 == 0 or i == iterations - 1:
                 t_loss, t_accuracy = sess.run([loss, accuracy],
                                               feed_dict={x: X_train,
                                                          y: Y_train})
-                print('After {} iterations:'.format(i))
+                print('After {} iterations:'.format(iterations
+                                                    if i == (iterations-1)
+                                                    else i))
                 print('\tTraining Cost: {}'.format(t_loss))
                 print('\tTraining Accuracy: {}'.format(t_accuracy))
                 v_loss, v_accuracy = sess.run([loss, accuracy],
