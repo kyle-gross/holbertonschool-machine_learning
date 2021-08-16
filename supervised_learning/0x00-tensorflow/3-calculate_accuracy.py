@@ -5,7 +5,7 @@ import tensorflow as tf
 
 
 def calculate_accuracy(y, y_pred):
-    """Determines cost of neural network
+    """Determines accuracy of neural network
 
     Args:
       y: placeholder for labels of input data
@@ -14,5 +14,4 @@ def calculate_accuracy(y, y_pred):
     Returns:
       tensor containing the decimal accuracy of the prediction
     """
-    cost = tf.square(y - y_pred, name='cost')
-    return tf.reduce_mean(cost)
+    return tf.reduce_mean(tf.cast(tf.equal(y, y_pred), tf.float32))
