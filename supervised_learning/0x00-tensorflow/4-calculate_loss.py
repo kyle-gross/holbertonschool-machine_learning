@@ -14,4 +14,4 @@ def calculate_loss(y, y_pred):
     Returns:
       tensor containing the loss of the prediction
     """
-    return tf.losses.mean_squared_error(labels=y, predictions=y_pred)
+    return tf.losses.softmax_cross_entropy(y, y_pred)
