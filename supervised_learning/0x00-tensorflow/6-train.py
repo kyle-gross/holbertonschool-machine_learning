@@ -49,12 +49,12 @@ def train(X_train, Y_train, X_valid, Y_valid, layer_sizes, activations,
                 t_loss, t_accuracy = sess.run([loss, accuracy],
                                               feed_dict={x: X_train,
                                                          y: Y_train})
-                print('After {} iterations:'.format(i))
-                print('\tTraining Cost: {}'.format(t_loss))
-                print('\tTraining Accuracy: {}'.format(t_accuracy))
                 v_loss, v_accuracy = sess.run([loss, accuracy],
                                               feed_dict={x: X_valid,
                                                          y: Y_valid})
+                print('After {} iterations:'.format(i))
+                print('\tTraining Cost: {}'.format(t_loss))
+                print('\tTraining Accuracy: {}'.format(t_accuracy))
                 print('\tValidation Cost: {}'.format(v_loss))
                 print('\tValidation Accuracy: {}'.format(v_accuracy))
             if i < iterations:
