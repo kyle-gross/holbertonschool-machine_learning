@@ -12,7 +12,7 @@ def create_layer(prev, n, activation):
       prev: tensor output of the previous layer
       n: number of nodes in the layer to create
       activation: activation function that the layer should use
-    
+
     Returns:
       tensor output of the layer
     """
