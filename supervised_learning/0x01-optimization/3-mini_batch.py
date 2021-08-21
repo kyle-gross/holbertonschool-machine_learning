@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Contains the function train_mini_batch.
 """
-from numpy.core.numeric import load
 import tensorflow as tf
 
 shuffle_data = __import__('2-shuffle_data').shuffle_data
