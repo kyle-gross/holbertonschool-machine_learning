@@ -36,7 +36,6 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         Path to model
     """
     with tf.Session() as sess:
-        X_train, Y_train = shuffle_data(X_train, Y_train)
         load = tf.train.import_meta_graph(load_path + '.meta')
         load.restore(sess, load_path)
         saver = tf.train.Saver()
@@ -48,6 +47,8 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         train_op = tf.get_collection('train_op')[0]
 
         for epoch in range(epochs + 1):
+            X_train, Y_train = shuffle_data(X_train, Y_train)
+            
             train_cost = loss.eval({x: X_train, y: Y_train})
             train_accuracy = accuracy.eval({x: X_train, y: Y_train})
             valid_cost = loss.eval({x: X_valid, y: Y_valid})
