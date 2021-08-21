@@ -62,13 +62,13 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
             print('\tValidation Accuracy: {}'.format(valid_accuracy))
 
             if i < epochs:
-                X_train, Y_train = shuffle_data(X_train, Y_train)
+                X_shuffle, Y_shuffle = shuffle_data(X_train, Y_train)
                 for j in range(batches):
                     start = batch_size * j
                     end = batch_size * (j + 1)
                     feed_dict = {
-                        x: X_train[start:end],
-                        y: Y_train[start:end]
+                        x: X_shuffle[start:end],
+                        y: Y_shuffle[start:end]
                     }
                     sess.run(train_op, feed_dict)
                     if (j + 1) % 100 == 0 and j != 0:
