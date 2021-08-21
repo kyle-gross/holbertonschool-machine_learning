@@ -36,9 +36,11 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         Path to model
     """
     with tf.Session() as sess:
-        load = tf.train.import_meta_graph(load_path + '.meta')
-        load.restore(sess, load_path)
-        saver = tf.train.Saver()
+        saver = tf.train.import_meta_graph(load_path + '.meta')
+        saver.restore(sess, load_path)
+
+        m = X_train.shape[0]
+        batches = int(m / batch_size)
 
         x = tf.get_collection('x')[0]
         y = tf.get_collection('y')[0]
@@ -46,33 +48,34 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         loss = tf.get_collection('loss')[0]
         train_op = tf.get_collection('train_op')[0]
 
-        for epoch in range(epochs + 1):
+        for i in range(epochs + 1):
             train_cost, train_accuracy = sess.run(
                 [loss, accuracy], {x: X_train, y: Y_train}
             )
             valid_cost, valid_accuracy = sess.run(
                 [loss, accuracy], {x: X_valid, y: Y_valid}
             )
-
-            print('After {} epochs:'.format(epoch))
+            print('After {} epochs:'.format(i))
             print('\tTraining Cost: {}'.format(train_cost))
             print('\tTraining Accuracy: {}'.format(train_accuracy))
             print('\tValidation Cost: {}'.format(valid_cost))
             print('\tValidation Accuracy: {}'.format(valid_accuracy))
 
-            if epoch < epochs:
+            if i < epochs:
                 X_train, Y_train = shuffle_data(X_train, Y_train)
-                for step in range(0, X_train.shape[0], batch_size):
+                for j in range(batches):
+                    start = batch_size * j
+                    end = batch_size * (j + 1)
                     feed_dict = {
-                        x: X_train[step:batch_size+step, :],
-                        y: Y_train[step:batch_size+step, :]
+                        x: X_train[start:end],
+                        y: Y_train[start:end]
                     }
                     sess.run(train_op, feed_dict)
-                    if not ((step // batch_size + 1) % 100) and step != 0:
+                    if (j + 1) % 100 == 0 and j != 0:
                         step_cost, step_accuracy = sess.run(
                             [loss, accuracy], feed_dict
                         )
-                        print('\tStep {}:'.format(int(step//batch_size)+1))
+                        print('\tStep {}:'.format(j + 1))
                         print('\t\tCost: {}'.format(step_cost))
                         print('\t\tAccuracy: {}'.format(step_accuracy))
 
