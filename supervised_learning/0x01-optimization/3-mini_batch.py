@@ -65,8 +65,8 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
 
                 for step in range(0, X_train.shape[0], batch_size):
                     feed_dict = {
-                        x: X_train[step:batch_size+step, ],
-                        y: Y_train[step:batch_size+step, ]
+                        x: X_train[step:batch_size+step, :],
+                        y: Y_train[step:batch_size+step, :]
                     }
                     if (step/batch_size) % 100 == 0 and step is not 0:
                         step_cost = loss.eval(feed_dict)
