@@ -36,9 +36,10 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         Path to model
     """
     with tf.Session() as sess:
+        X_train, Y_train = shuffle_data(X_train, Y_train)
         load = tf.train.import_meta_graph(load_path + '.meta')
         load.restore(sess, load_path)
-        save = tf.train.Saver()
+        saver = tf.train.Saver()
 
         x = tf.get_collection('x')[0]
         y = tf.get_collection('y')[0]
@@ -58,9 +59,9 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
             print('\tValidation Cost: {}'.format(valid_cost))
             print('\tValidation Accuracy: {}'.format(valid_accuracy))
 
-            X_train, Y_train = shuffle_data(X_train, Y_train)
-
             if epoch < epochs:
+                # X_train, Y_train = shuffle_data(X_train, Y_train)
+
                 for step in range(0, X_train.shape[0], batch_size):
                     feed_dict = {
                         x: X_train[step:batch_size+step],
@@ -69,9 +70,10 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
                     if (step/batch_size) % 100 == 0 and step is not 0:
                         step_cost = loss.eval(feed_dict)
                         step_accuracy = accuracy.eval(feed_dict)
+
                         print('\tStep {}:'.format(int(step/batch_size)))
                         print('\t\tCost: {}'.format(step_cost))
                         print('\t\tAccuracy: {}'.format(step_accuracy))
                     sess.run(train_op, feed_dict)
 
-        return save.save(sess, save_path)
+        return saver.save(sess, save_path)
