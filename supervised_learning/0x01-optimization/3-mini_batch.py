@@ -39,9 +39,6 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         saver = tf.train.import_meta_graph(load_path + '.meta')
         saver.restore(sess, load_path)
 
-        m = X_train.shape[0]
-        batches = int(m / batch_size)
-
         x = tf.get_collection('x')[0]
         y = tf.get_collection('y')[0]
         accuracy = tf.get_collection('accuracy')[0]
@@ -49,34 +46,30 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         train_op = tf.get_collection('train_op')[0]
 
         for i in range(epochs + 1):
-            train_cost, train_accuracy = sess.run(
-                [loss, accuracy], {x: X_train, y: Y_train}
-            )
-            valid_cost, valid_accuracy = sess.run(
-                [loss, accuracy], {x: X_valid, y: Y_valid}
-            )
-            print('After {} epochs:'.format(i))
-            print('\tTraining Cost: {}'.format(train_cost))
-            print('\tTraining Accuracy: {}'.format(train_accuracy))
-            print('\tValidation Cost: {}'.format(valid_cost))
-            print('\tValidation Accuracy: {}'.format(valid_accuracy))
+            train_cost = loss.eval({x: X_train, y: Y_train})
+            train_accuracy = accuracy.eval({x: X_train, y: Y_train})
+            valid_cost = loss.eval({x: X_valid, y: Y_valid})
+            valid_accuracy = accuracy.eval({x: X_valid, y: Y_valid})
+
+            print('After {} epochs:\n'.format(i) +
+                  '\tTraining Cost: {}\n'.format(train_cost) +
+                  '\tTraining Accuracy: {}\n'.format(train_accuracy) +
+                  '\tValidation Cost: {}\n'.format(valid_cost) +
+                  '\tValidation Accuracy: {}'.format(valid_accuracy))
 
             if i < epochs:
                 X_shuffle, Y_shuffle = shuffle_data(X_train, Y_train)
-                for j in range(batches):
-                    start = batch_size * j
-                    end = batch_size * (j + 1)
+                for j in range(0, X_train.shape[0], batch_size):
                     feed_dict = {
-                        x: X_shuffle[start:end],
-                        y: Y_shuffle[start:end]
+                        x: X_shuffle[j:batch_size+j],
+                        y: Y_shuffle[j:batch_size+j]
                     }
+                    if (j/batch_size) % 100 == 0 and j != 0:
+                        step_cost = loss.eval(feed_dict)
+                        step_accuracy = accuracy.eval(feed_dict)
+                        print('\tStep {}:\n'.format(int(j/batch_size)) +
+                              '\t\tCost: {}\n'.format(step_cost) +
+                              '\t\tAccuracy: {}'.format(step_accuracy))
                     sess.run(train_op, feed_dict)
-                    if (j + 1) % 100 == 0 and j != 0:
-                        step_cost, step_accuracy = sess.run(
-                            [loss, accuracy], feed_dict
-                        )
-                        print('\tStep {}:'.format(j + 1))
-                        print('\t\tCost: {}'.format(step_cost))
-                        print('\t\tAccuracy: {}'.format(step_accuracy))
 
         return saver.save(sess, save_path)
