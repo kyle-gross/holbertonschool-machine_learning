@@ -40,9 +40,11 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         saver.restore(sess, load_path)
 
         m = X_train.shape[0]
-        batches = int(m / batch_size)
+        batches = m / batch_size
         if batches % 1 != 0:
-            batches += 1
+            batches = int(batches) + 1
+        else:
+            batches = int(batches)
 
         x = tf.get_collection('x')[0]
         y = tf.get_collection('y')[0]
