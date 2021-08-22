@@ -64,12 +64,12 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
                         x: X_shuffle[j:batch_size+j],
                         y: Y_shuffle[j:batch_size+j]
                     }
+                    sess.run(train_op, feed_dict)
                     if (j/batch_size) % 100 == 0 and j != 0:
                         step_cost = loss.eval(feed_dict)
                         step_accuracy = accuracy.eval(feed_dict)
                         print('\tStep {}:\n'.format(int(j/batch_size)) +
                               '\t\tCost: {}\n'.format(step_cost) +
                               '\t\tAccuracy: {}'.format(step_accuracy))
-                    sess.run(train_op, feed_dict)
 
         return saver.save(sess, save_path)
