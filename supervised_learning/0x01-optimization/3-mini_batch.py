@@ -39,6 +39,11 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
         saver = tf.train.import_meta_graph(load_path + '.meta')
         saver.restore(sess, load_path)
 
+        m = X_train.shape[0]
+        batches = int(m / batch_size)
+        if batches % 1 != 0:
+            batches += 1
+
         x = tf.get_collection('x')[0]
         y = tf.get_collection('y')[0]
         accuracy = tf.get_collection('accuracy')[0]
@@ -59,16 +64,18 @@ def train_mini_batch(X_train, Y_train, X_valid, Y_valid,
 
             if i < epochs:
                 X_shuffle, Y_shuffle = shuffle_data(X_train, Y_train)
-                for j in range(0, X_train.shape[0], batch_size):
+                for j in range(batches):
                     feed_dict = {
-                        x: X_shuffle[j:batch_size+j],
-                        y: Y_shuffle[j:batch_size+j]
+                        x: X_shuffle[batch_size * j:batch_size * (j+1)],
+                        y: Y_shuffle[batch_size * j:batch_size * (j+1)]
                     }
+
                     sess.run(train_op, feed_dict)
-                    if (j/batch_size) % 100 == 0 and j != 0:
+
+                    if (j + 1) % 100 == 0 and j != 0:
                         step_cost = loss.eval(feed_dict)
                         step_accuracy = accuracy.eval(feed_dict)
-                        print('\tStep {}:\n'.format(int(j/batch_size)) +
+                        print('\tStep {}:\n'.format(j + 1) +
                               '\t\tCost: {}\n'.format(step_cost) +
                               '\t\tAccuracy: {}'.format(step_accuracy))
 
