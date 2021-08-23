@@ -21,27 +21,42 @@
 
 ## Tasks:
 [0. Placeholders](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/0-create_placeholders.py "0. Placeholders")
-* Create two placeholders, `x` and `y`, for the neural network.
 
+Create two placeholders, `x` and `y`, for the neural network.
+
+---
 [1. Layers](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/1-create_layer.py "1. Layers")
-* Creates a single layer for the neural network.
 
+Creates a single layer for the neural network.
+
+---
 [2. Forward Propagation](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/2-forward_prop.py "2. Forward Propagation")
-* Creates the forward propagation graph for the neural network.
 
+Creates the forward propagation graph for the neural network.
+
+---
 [3. Accuracy](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/3-calculate_accuracy.py "3. Accuracy")
-* Determines accuracy of neural network.
 
+Determines accuracy of neural network.
+
+---
 [4. Loss](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/4-calculate_loss.py "4. Loss")
-* Calculates loss of neural network. Uses `tf.losses.softmax_cross_entropy()`.
 
+Calculates loss of neural network. Uses `tf.losses.softmax_cross_entropy()`.
+
+---
 [5. Train_Op](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/5-create_train_op.py "5. Train Op")
-* Creates the training operation for the neural network. Uses gradient descent as optimizer.
 
+Creates the training operation for the neural network. Uses gradient descent as optimizer.
+
+---
 [6. Train](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/6-train.py "6. Train")
-* Uses previously created functions to create, forward_propagate, and optimize.
+
+Uses previously created functions to create, forward_propagate, and optimize.
 * Trains the neural network over `iterations`.
 * Saves trained model to `save_path`.
 
+---
 [7. Evaluate](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x00-tensorflow/7-evaluate.py "7. Evaluate")
-* Evaluates the output of the neural network.
+
+Evaluates the output of the neural network.
