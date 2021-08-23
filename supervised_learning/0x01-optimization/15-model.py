@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Contains the functions shuffle_data(), forward_prop(), and model()
 """
-from re import X
 import numpy as np
 import tensorflow as tf
 
