@@ -2,7 +2,6 @@
 """Contains the function batch_norm()
 """
 import numpy as np
-from numpy.core.fromnumeric import mean
 
 
 def batch_norm(Z, gamma, beta, epsilon):
