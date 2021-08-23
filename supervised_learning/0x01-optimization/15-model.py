@@ -14,8 +14,8 @@ def forward_prop(prev, layers=[], activations=[], epsilon=1e-8):
         z = dense(prev)
         if i < len(layers) - 1:
             mean, variance = tf.nn.moments(z, axes=[0])
-            gamma = tf.Variable(tf.ones([n]), trainable=True, name='gamma')
-            beta = tf.Variable(tf.zeros([n]), trainable=True, name='beta')
+            gamma = tf.Variable(tf.constant(1.0, shape=[n]), trainable=True)
+            beta = tf.Variable(tf.constant(0.0, shape=[n]), trainable=True)
             z_norm = tf.nn.batch_normalization(
                 z, mean, variance, beta, gamma, epsilon
             )
