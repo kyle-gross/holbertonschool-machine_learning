@@ -5,6 +5,7 @@
 * Regularization
 * Normaliziation
 * Batch normalization
+* Learning rate decay
 * Mini-batch gradient descent
 * Gradient descent optimzation algorithms
     * Momentum
@@ -13,6 +14,21 @@
 
 ## Resources:
 * [Hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning) "Hyperparameter")
+* [Regularization](https://www.youtube.com/watch?v=6g0t3Phly2M&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=4 "Regularization")
+* [Normalizing inputs](https://www.youtube.com/watch?v=FDCfw-YqWTE&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=9 "Normalizing inputs")
+* [Batch normalization](https://www.youtube.com/watch?v=tNIpEZLv_eg&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=27 "Batch normalization")
+    * [tf.nn.batch_normalization](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/nn/batch_normalization.md "tf.nn.batch_normalization")
+    * [tf.nn.moments](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/nn/moments.md "tf.nn.moments")
+* [Learning rate decay](https://www.youtube.com/watch?v=QzulmoOg2JE&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=24 "Learning rate decay")
+    * [tf.train.inverse_time_decay](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/train/inverse_time_decay.md "tf.train.inverse_time_decay")
+* [Mini-batch gradient descent](https://www.youtube.com/watch?v=4qJaSmvhxi8&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=15 "Mini-batch gradient descent")
+    * [Understanding mini-batch](https://www.youtube.com/watch?v=-_4Zi8fCZO4&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=16 "Understanding mini-batch")
+* [Momentum optimization](https://www.youtube.com/watch?v=k8fTYJPd3_I&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=20 "Momentum optimization")
+    * [tf.train.MomentumOptimizer](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/train/MomentumOptimizer.md "tf.train.MomentumOptimizer")
+* [RMSprop optimization](https://www.youtube.com/watch?v=_e-LFe_igno&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=21 "RMSprop optimization")
+    * [tf.train.RMSPropOptimizer](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/train/RMSPropOptimizer.md "tf.train.RMSPropOptimizer")
+* [Adam optimization](https://www.youtube.com/watch?v=JXQT_vxqwIs&list=PLkDaE6sCZn6Hn0vK8co82zjQtt3T2Nkqc&index=22 "Adam optimization")
+    * [tf.train.AdamOptimizer](https://github.com/tensorflow/docs/blob/r1.12/site/en/api_docs/python/tf/train/AdamOptimizer.md "tf.train.AdamOptimizer")
 
 ## Tasks:
 [0. Normalization Constants](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x01-optimization/0-norm_constants.py "0. Normalization Constants")
@@ -20,16 +36,16 @@
 Calculates normalization constants of a matrix.
 * mean / std dev
 
-----
+---
 [1. Normalize](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x01-optimization/1-normalize.py "1. Normalize")
 
-Normalize a matrix
-* (X - mean) / std_dev.
+Normalizes a matrix.
+* (X - mean) / std_dev
 
 ---
 [2. Shuffle Data](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x01-optimization/2-shuffle_data.py "2. Shuffle Data")
 
-Shuffles data points in two matricies
+Shuffles data points in two matricies.
 
 ---
 [3. Mini-Batch](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x01-optimization/3-mini_batch.py "3. Mini-Batch")
