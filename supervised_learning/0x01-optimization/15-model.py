@@ -91,12 +91,13 @@ def model(Data_train, Data_valid, layers, activations, alpha=0.001, beta1=0.9,
     tf.add_to_collection('accuracy', accuracy)
 
     global_step = tf.Variable(0, trainable=False)
-    decay_steps = m // batch_size
-    if m % batch_size != 0:
-        decay_steps += 1
+    # batches == decay_steps
+    batches = m // batch_size
+    if batches % batch_size != 0:
+        batches += 1
 
     alpha = tf.train.inverse_time_decay(
-        alpha, global_step, decay_steps, decay_rate, staircase=True
+        alpha, global_step, batches, decay_rate, staircase=True
         )
     train_op = tf.train.AdamOptimizer(
         alpha, beta1, beta2, epsilon
@@ -106,11 +107,6 @@ def model(Data_train, Data_valid, layers, activations, alpha=0.001, beta1=0.9,
     init = tf.global_variables_initializer()
     with tf.Session() as sess:
         sess.run(init)
-
-        m = X_train.shape[0]
-        batches = m // batch_size
-        if batches % 1 != 0:
-            batches += 1
 
         for i in range(epochs + 1):
             train_cost = loss.eval({x: X_train, y: Y_train})
