@@ -14,8 +14,8 @@ def forward_prop(prev, layers=[], activations=[], epsilon=1e-8):
         z = dense(prev)
         if i < len(layers) - 1:
             mean, variance = tf.nn.moments(z, axes=[0])
-            gamma = tf.Variable(tf.constant(1.0, shape=[n]), trainable=True)
-            beta = tf.Variable(tf.constant(0.0, shape=[n]), trainable=True)
+            gamma = tf.Variable(tf.ones([n]), trainable=True)
+            beta = tf.Variable(tf.zeros([n]), trainable=True)
             z_norm = tf.nn.batch_normalization(
                 z, mean, variance, beta, gamma, epsilon
             )
@@ -122,18 +122,18 @@ def model(Data_train, Data_valid, layers, activations, alpha=0.001, beta1=0.9,
 
             if i < epochs:
                 X_shuffle, Y_shuffle = shuffle_data(X_train, Y_train)
-                for j in range(batches):
+                for j in range(0, X_train.shape[0], batch_size):
                     feed_dict = {
-                        x: X_shuffle[batch_size * j:batch_size * (j+1)],
-                        y: Y_shuffle[batch_size * j:batch_size * (j+1)]
+                        x: X_shuffle[j:j + batch_size],
+                        y: Y_shuffle[j:j + batch_size]
                     }
 
                     sess.run(train_op, feed_dict)
 
-                    if (j + 1) % 100 == 0 and j != 0:
+                    if not ((j // batch_size + 1) % 100):
                         step_cost = loss.eval(feed_dict)
                         step_accuracy = accuracy.eval(feed_dict)
-                        print('\tStep {}:\n'.format(j + 1) +
+                        print('\tStep {}:\n'.format(j//batch_size+1) +
                               '\t\tCost: {}\n'.format(step_cost) +
                               '\t\tAccuracy: {}'.format(step_accuracy))
         saver = tf.train.Saver()
