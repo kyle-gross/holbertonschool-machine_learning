@@ -15,7 +15,7 @@ def sensitivity(confusion):
         numpy.ndarray, shape(classes,) - contains sensitivity of each class
     """
     FN = confusion.sum(axis=1) - np.diag(confusion)
-    TP =  np.diag(confusion)
+    TP = np.diag(confusion)
     TPR = TP / (TP + FN)
 
     return TPR
