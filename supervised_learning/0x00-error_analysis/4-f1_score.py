@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Contains the function f1_score()
 """
-from typing import TYPE_CHECKING
 import numpy as np
 
 
