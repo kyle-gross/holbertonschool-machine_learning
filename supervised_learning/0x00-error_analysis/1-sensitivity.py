@@ -5,8 +5,7 @@ import numpy as np
 
 
 def sensitivity(confusion):
-    """Calculates the sensitivity (recall) for each class in a
-    confusion matrix.
+    """Calculates the sensitivity (recall) for each class in a confusion matrix
 
     Args:
         confusion: numpy.ndarray, shape(classes,classes) - confusion matrix
