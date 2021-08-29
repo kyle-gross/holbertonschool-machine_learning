@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env python3
 """Contains the function l2_reg_create_layer()"""
 import tensorflow as tf
 
