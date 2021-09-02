@@ -29,8 +29,8 @@ def train_model(network, data, labels, batch_size, epochs,
     Returns:
         generated History object
     """
+    callback = list()
     if validation_data:
-        callback = list()
         if early_stopping:
             callback.append(K.callbacks.EarlyStopping(
                 monitor='val_loss',
@@ -45,7 +45,12 @@ def train_model(network, data, labels, batch_size, epochs,
                 schedule,
                 verbose=1
             ))
-    history = network.fit(
+    if save_best:
+        callback.append(K.callbacks.ModelCheckpoint(
+            filepath,
+            save_best_only=True
+        ))
+    return network.fit(
         x=data,
         y=labels,
         batch_size=batch_size,
@@ -55,7 +60,3 @@ def train_model(network, data, labels, batch_size, epochs,
         validation_data=validation_data,
         shuffle=shuffle
     )
-    if save_best:
-        network.save(filepath)
-
-    return history
