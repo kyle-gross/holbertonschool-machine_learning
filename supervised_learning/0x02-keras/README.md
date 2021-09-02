@@ -82,6 +82,7 @@ Contains two functions, one which saves and one which loads a model's configurat
 
 Tests a network loaded from a Keras model.
 
+---
 ### [13. Predict](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/supervised_learning/0x02-keras/13-predict.py "13. Predict")
 
 Makes a prediction using a neural network made with Keras.
