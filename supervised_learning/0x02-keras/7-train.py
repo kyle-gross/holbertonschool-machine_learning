@@ -41,7 +41,7 @@ def train_model(network, data, labels, batch_size, epochs,
 
             callback.append(K.callbacks.LearningRateScheduler(
                 schedule,
-                verbose=verbose
+                verbose=1
             ))
     return network.fit(
         x=data,
