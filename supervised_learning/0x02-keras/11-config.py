@@ -30,4 +30,4 @@ def load_config(filename):
     with open(filename, 'r') as f:
         config = f.read()
 
-    return K.model.from_json(config)
+    return K.models.model_from_json(config)
