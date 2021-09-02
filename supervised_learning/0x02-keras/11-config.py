@@ -13,10 +13,9 @@ def save_config(network, filename):
     Returns:
         None
     """
-    network.save(
-        filename,
-        save_traces=False
-    )
+    config = network.to_json()
+    with open(filename, 'w') as f:
+        f.write(config)
 
 
 def load_config(filename):
@@ -28,4 +27,4 @@ def load_config(filename):
     Returns:
         loaded model
     """
-    return K.model.from_config(filename)
+    return K.model.from_json(filename)
