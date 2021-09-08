@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def convolve_channels(images, kernel, padding='same', stride=(1,1)):
+def convolve_channels(images, kernel, padding='same', stride=(1, 1)):
     """Performs a convolution on images with channels
 
     Args:
