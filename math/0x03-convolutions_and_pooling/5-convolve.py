@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Contains the function convolve_channels()"""
+"""Contains the function convolve()"""
 import numpy as np
 
 
-def convolve_channels(images, kernel, padding='same', stride=(1, 1)):
-    """Performs a convolution on images with channels
+def convolve(images, kernels, padding='same', stride=(1, 1)):
+    """Performs a convolution on images using multiple kernels
 
     Args:
         images (numpy.ndarray),(m,h,w,c): contains images
@@ -12,9 +12,10 @@ def convolve_channels(images, kernel, padding='same', stride=(1, 1)):
             h: height in pixels of images
             W: width in pixels of images
             c: number of channels in image
-        kernel (numpy.ndarray),(kh,kw,c): contains kernel for convolution
+        kernels (numpy.ndarray),(kh,kw,c,nc): contains kernels for convolutions
             kh: height of kernel
             kw: width of kernel
+            nc: numer of kernels
         padding (tuple or str): if 'same', perform same
             if 'valid', perform valid
             if (tuple),(ph,pw):
@@ -28,7 +29,7 @@ def convolve_channels(images, kernel, padding='same', stride=(1, 1)):
         numpy.ndarray containing convolved images
     """
     m, h, w, c = images.shape
-    kh, kw, output_d = kernel.shape
+    kh, kw, output_d, nc = kernels.shape
     sh, sw = stride
 
     if padding == 'same':
@@ -44,13 +45,16 @@ def convolve_channels(images, kernel, padding='same', stride=(1, 1)):
 
     out_h = (h + (2 * pad_h) - kh) // sh + 1
     out_w = (w + (2 * pad_w) - kw) // sw + 1
-    output = np.zeros((m, out_h, out_w))
+    output = np.zeros((m, out_h, out_w, nc))
 
-    for x in range(out_h):
-        for y in range(out_w):
-            output[:, x, y] = np.sum(
-                kernel * image_padded[:, sh*x: sh*x+kh, sw*y: sw*y+kw],
-                axis=(1, 2, 3)
-            )
+    for ch in range(nc):
+        for x in range(out_h):
+            for y in range(out_w):
+                output[:, x, y, ch] = np.sum(
+                    np.multiply(
+                        kernels[:, :, :, ch],
+                        image_padded[:, sh*x: sh*x+kh, sw*y: sw*y+kw]
+                    ), axis=(1, 2, 3)
+                )
 
     return output
