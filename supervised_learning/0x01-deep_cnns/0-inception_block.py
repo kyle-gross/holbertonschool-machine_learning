@@ -21,19 +21,33 @@ def inception_block(A_prev, filters):
     """
     F1, F3R, F3, F5R, F5, FPP = filters
     # 1x1 conv
-    conv1 = K.layers.Conv2D(F1, (1,1), padding='same', activation='relu')(A_prev)
+    conv1 = K.layers.Conv2D(
+        F1, (1, 1), padding='same', activation='relu'
+    )(A_prev)
     # 1x1 conv before 3x3 conv
-    conv3R = K.layers.Conv2D(F3R, (1, 1), padding='same', activation='relu')(A_prev)
+    conv3R = K.layers.Conv2D(
+        F3R, (1, 1), padding='same', activation='relu'
+    )(A_prev)
     # 1x1 conv before 5x5 conv
-    conv5R = K.layers.Conv2D(F5R, (1, 1), padding='same', activation='relu')(A_prev)
+    conv5R = K.layers.Conv2D(
+        F5R, (1, 1), padding='same', activation='relu'
+    )(A_prev)
     # 3x3 max pooling before 1x1 conv
-    pool = K.layers.MaxPooling2D((3, 3), strides=(1, 1), padding='same')(A_prev)
+    pool = K.layers.MaxPooling2D(
+        (3, 3), strides=(1, 1), padding='same'
+    )(A_prev)
     # 3x3 conv
-    conv3 = K.layers.Conv2D(F3, (3, 3), padding='same', activation='relu')(conv3R)
+    conv3 = K.layers.Conv2D(
+        F3, (3, 3), padding='same', activation='relu'
+    )(conv3R)
     # 5x5 conv
-    conv5 = K.layers.Conv2D(F5, (5, 5), padding='same', activation='relu')(conv5R)
+    conv5 = K.layers.Conv2D(
+        F5, (5, 5), padding='same', activation='relu'
+    )(conv5R)
     # 2nd 1x1 conv
-    conv1x = K.layers.Conv2D(FPP, (1, 1), padding='same', activation='relu')(pool)
+    conv1x = K.layers.Conv2D(
+        FPP, (1, 1), padding='same', activation='relu'
+    )(pool)
     # Concatenate filters, assumes filters/channels last
     layer_out = K.layers.concatenate(
         [conv1, conv3, conv5, conv1x], axis=-1
