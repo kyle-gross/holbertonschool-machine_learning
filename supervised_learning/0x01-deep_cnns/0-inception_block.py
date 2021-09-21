@@ -50,7 +50,7 @@ def inception_block(A_prev, filters):
     )(pool)
     # Concatenate filters, assumes filters/channels last
     layer_out = K.layers.concatenate(
-        [conv1, conv3, conv5, conv1x], axis=-1
+        [conv1, conv3, conv5, conv1x], axis=3
     )
 
     return layer_out
