@@ -47,11 +47,11 @@ def inception_block(A_prev, filters):
     )(conv5R)
     # 2nd 1x1 conv
     conv1x = K.layers.Conv2D(
-        FPP, (1, 1), padding='same', activation='relu'
+        FPP, (1, 1), padding='same', activation='relu', kernel_initializer=init
     )(pool)
     # Concatenate filters, assumes filters/channels last
     layer_out = K.layers.concatenate(
-        [conv1, conv3, conv5, conv1x], axis=-1
+        [conv1, conv3, conv5, conv1x], axis=3
     )
 
     return layer_out
