@@ -13,7 +13,6 @@ def inception_network():
     init = K.initializers.he_normal(seed=None)
     input = K.Input(shape=(224, 224, 3))
 
-    # Keras network: number suffix = layer number
     conv0 = K.layers.Conv2D(
         filters=64, kernel_size=(7, 7), strides=(2, 2), padding='same',
         activation='relu', kernel_initializer=init
@@ -23,10 +22,16 @@ def inception_network():
         pool_size=(3, 3), strides=(2, 2), padding='same'
     )(conv0)
 
+    # Extra layer, not on task's list but in sample output?
+    convEX = K.layers.Conv2D(
+        filters=64, kernel_size=(1, 1), padding='same', activation='relu',
+        kernel_initializer=init
+    )(pool1)
+
     conv2 = K.layers.Conv2D(
         filters=192, kernel_size=(3, 3), padding='same', activation='relu',
         kernel_initializer=init
-    )(pool1)
+    )(convEX)
 
     pool3 = K.layers.MaxPooling2D(
         pool_size=(3, 3), strides=(2, 2), padding='same'
