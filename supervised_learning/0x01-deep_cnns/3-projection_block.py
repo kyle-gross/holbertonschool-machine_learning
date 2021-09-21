@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Contains the function projection_block()"""
 import tensorflow.keras as K
 
 
