@@ -10,7 +10,7 @@ def transition_layer(X, nb_filters, compression):
         X (keras input): output of prev layer
         nb_filters (int): no. filters in X
         compression (float): compression factor for transition layer
-    
+
     Returns:
         Output of the transition layer and no. filters within output,
         respectively.
