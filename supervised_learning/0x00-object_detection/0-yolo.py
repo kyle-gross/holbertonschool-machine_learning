@@ -35,6 +35,8 @@ class Yolo:
         self.model = K.models.load_model(model_path)
         with open(classes_path) as f:
             names = f.read().split('\n')
+            # Remove trailing blank
+            names.pop()
         self.class_names = names
         self.class_t = class_t
         self.nms_t = nms_t
