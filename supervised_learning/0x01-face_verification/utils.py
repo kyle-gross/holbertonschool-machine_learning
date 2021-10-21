@@ -31,7 +31,7 @@ def load_images(images_path, as_array=True):
     for path in sorted(paths):
         image_path = images_path + '/' + path
         image = cv2.imread(image_path)
-        images.append(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+        images.append(cv2.cvtColor(image, cv2.COLOR_RGB2BGR))
         filenames.append(path)
 
     if as_array:
