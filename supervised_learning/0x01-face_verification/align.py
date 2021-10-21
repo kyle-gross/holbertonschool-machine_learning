@@ -48,5 +48,5 @@ class FaceAlign:
             None if failure
         """
         points = self.shape_predictor(image, detection)
-        
-        return np.array([(p.x, p.y) for p in points.parts()])
+
+        return np.array([(float(p.x), float(p.y)) for p in points.parts()])
