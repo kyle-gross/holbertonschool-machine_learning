@@ -33,3 +33,20 @@ class FaceAlign:
             return max(faces, key=lambda rect: rect.width() * rect.height())
         else:
             return None
+
+    def find_landmarks(self, image, detection):
+        """Finds facial landmarks
+
+        Args:
+            image (ndarray): image of which to find landmarks
+            detection (dlib.rectangle): contains boundary box of face
+
+        Returns:
+            numpy.ndarray (shape(p, 2)) containing landmark points
+                * p: no. landmark points
+                * 2: x and y coordinates of point
+            None if failure
+        """
+        points = self.shape_predictor(image, detection)
+        
+        return np.array([(p.x, p.y) for p in points.parts()])
