@@ -35,15 +35,7 @@ def load_images(images_path, as_array=True):
         filenames.append(path)
 
     if as_array:
-        w_min = min(im.shape[0] for im in images)
-        im_list_resize = [
-            cv2.resize(
-                im,
-                (w_min, int(im.shape[1] * w_min / im.shape[1])),
-                interpolation=cv2.INTER_CUBIC)
-            for im in images
-        ]
-        images = np.stack(im_list_resize)
+        images = np.array(images)
 
     return images, filenames
 
