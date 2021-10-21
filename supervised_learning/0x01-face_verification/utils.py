@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Contains utility functions"""
 
+import csv
 import cv2
 import numpy as np
 
@@ -37,3 +38,24 @@ def load_images(images_path, as_array=True):
         images = np.stack(images)
 
     return images, filenames
+
+
+def load_csv(csv_path, params={}):
+    """Loads the contents of a csv file as a list of lists
+
+    Args:
+        csv_path (str): path to the csv to load
+        params (dict): parameters to load the csv with
+
+    Returns:
+        list of lists representing contents found in csv_path
+    """
+    csv_contents = list()
+
+    with open(csv_path, 'r') as f:
+        read = csv.reader(f, params)
+
+        for item in read:
+            csv_contents.append(item)
+
+    return csv_contents
