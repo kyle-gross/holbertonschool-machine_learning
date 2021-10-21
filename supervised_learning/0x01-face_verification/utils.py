@@ -31,12 +31,19 @@ def load_images(images_path, as_array=True):
     for path in sorted(paths):
         image_path = images_path + '/' + path
         image = cv2.imread(image_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        images.append(image)
+        images.append(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
         filenames.append(path)
 
     if as_array:
-        images = np.stack(images)
+        w_min = min(im.shape[0] for im in images)
+        im_list_resize = [
+            cv2.resize(
+                im,
+                (w_min, int(im.shape[1] * w_min / im.shape[1])),
+                interpolation=cv2.INTER_CUBIC)
+            for im in images
+        ]
+        images = np.stack(im_list_resize)
 
     return images, filenames
 
