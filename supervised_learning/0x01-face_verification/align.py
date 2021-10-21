@@ -22,7 +22,7 @@ class FaceAlign:
 
         Args:
             image (rank 3 ndarray): contains the image to detect in
-        
+
         Returns:
             dlib.rectangle containing the boundary box for the face
             or None if failure
