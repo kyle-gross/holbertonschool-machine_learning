@@ -64,7 +64,7 @@ class FaceAlign:
             size (int): desired size of the aligned image
 
         Returns:
-            ndarray (size, size, 3): contains aligned image, or None if failure.
+            ndarray (size, size, 3): contains aligned image, or None if failure
         """
         bb = self.detect(image)
 
