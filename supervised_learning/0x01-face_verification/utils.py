@@ -74,7 +74,7 @@ def save_images(path, images, filenames):
     """
     import os
 
-    if os.path.exists(path):
+    if os.path.isdir(path):
         for i, image in enumerate(images):
             cv2.imwrite(path+'/'+filenames[i], image)
         return True
