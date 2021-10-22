@@ -72,7 +72,7 @@ class FaceAlign:
 
         landmarks = self.find_landmarks(image, bb)
         np_landmarks = np.float32(landmarks)
-        points = np.float32(anchor_points * size)
+        points = anchor_points * size
 
         H = cv2.getAffineTransform((np_landmarks[landmark_indices]), points)
         thumbnail = cv2.warpAffine(image, H, (size, size))
