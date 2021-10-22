@@ -72,9 +72,11 @@ def save_images(path, images, filenames):
     Returns:
         True on success and False on failure
     """
-    try:
+    import os
+
+    if os.path.exists(path):
         for i, image in enumerate(images):
             cv2.imwrite(path+'/'+filenames[i], image)
         return True
-    except:
+    else:
         return False
