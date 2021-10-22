@@ -59,3 +59,22 @@ def load_csv(csv_path, params={}):
             csv_contents.append(item)
 
     return csv_contents
+
+
+def save_images(path, images, filenames):
+    """Saves images to a specified path
+
+    Args:
+        path (str): path to dir where image should be saved
+        images (list/ndarray): images to save
+        filenames (list): list of filenames of images to save
+
+    Returns:
+        True on success and False on failure
+    """
+    try:
+        for i, image in enumerate(images):
+            cv2.imwrite(path+'/'+filenames[i], image)
+        return True
+    except:
+        return False
