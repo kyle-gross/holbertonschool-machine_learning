@@ -2,9 +2,6 @@
 """Contains the function determinant()"""
 
 
-from functools import total_ordering
-
-
 def determinant(matrix):
     """Calculates the determinant of a matrix
 
