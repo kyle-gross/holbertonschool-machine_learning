@@ -11,22 +11,11 @@ def cofactor(matrix):
     Returns:
         cofactor of the matrix
     """
-    if type(matrix) is not list or len(matrix) == 0:
-        raise TypeError('matrix must be a list of lists')
-    for row in matrix:
-        if type(row) is not list:
-            raise TypeError('matrix must be a list of lists')
-        if len(row) != len(matrix):
-            raise ValueError('matrix must be a non-empty square matrix')
-
     co_matrix = minor(matrix)
-    multiplier = 1
 
     for row in range(len(co_matrix)):
         for col in range(len(co_matrix)):
-            co_matrix[row][col] *= multiplier
-            multiplier *= -1
-        multiplier *= -1
+            co_matrix[row][col] *= pow(-1, row+col)
 
     return co_matrix
 
