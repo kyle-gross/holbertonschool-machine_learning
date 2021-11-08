@@ -40,7 +40,7 @@ def adjugate(matrix):
 
     for row in range(len(temp)):
         for col in range(len(temp)):
-            adj_matrix[col].append(temp[row][col])
+            adj_matrix[col].append(temp[col][row])
 
     return adj_matrix
 
