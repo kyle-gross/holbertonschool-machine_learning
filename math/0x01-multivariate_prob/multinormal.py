@@ -47,11 +47,12 @@ class MultiNormal:
 
         d = self.cov.shape[0]
         if len(x.shape) != 2 or x.shape != (d, 1):
-            raise ValueError('x must have the shape ({d}, 1')
+            raise ValueError('x must have the shape ({}, 1'.format(d))
 
         det = np.linalg.det(self.cov)
         inv = np.linalg.inv(self.cov)
         pdf = 1.0 / np.sqrt(((2 * np.pi) ** d) * det)
-        pdf *= np.exp(-0.5 * (np.matmul(np.matmul((x - self.mean).T, inv), (x - self.mean))))
+        multiplier = np.matmul(np.matmul((x - self.mean).T, inv), (x - self.mean))
+        pdf *= np.exp(-0.5 * multiplier)
 
         return pdf[0][0]
