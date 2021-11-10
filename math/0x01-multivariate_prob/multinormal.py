@@ -19,12 +19,12 @@ class MultiNormal:
             cov (ndarray)(d,d): contains covariance matrix of data
         """
         if type(data) is not np.ndarray or len(data.shape) != 2:
-            raise TypeError('X must be a 2D numpy.ndarray')
+            raise TypeError('data must be a 2D numpy.ndarray')
 
         d, n = data.shape
 
         if n < 2:
-            raise ValueError('X must contain multiple data points')
+            raise ValueError('data must contain multiple data points')
 
         mean = np.mean(data, axis=1, keepdims=True)
         cov = np.matmul(data - mean, data.T - mean.T) / (n - 1)
