@@ -14,8 +14,8 @@ def likelihood(x, n, P):
             developing severe side effects
 
     Returns:
-        1D numpy.ndarray: likelihood of obtaining the data, x, and n for
-            each probability in P
+        likelihood (1D ndarray): likelihood of obtaining the data, x, and n
+            for each probability in P
     """
     if type(n) is not int or n < 1:
         raise ValueError('n must be a positive integer')
