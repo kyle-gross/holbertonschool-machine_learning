@@ -17,7 +17,7 @@ def likelihood(x, n, P):
         1D numpy.ndarray: likelihood of obtaining the data, x, and n for
             each probability in P
     """
-    if n < 1:
+    if type(n) is not int or n < 1:
         raise ValueError('n must be a positive integer')
     if type(x) is not int or x < 0:
         raise ValueError(
@@ -25,7 +25,7 @@ def likelihood(x, n, P):
         )
     if x > n:
         raise ValueError('x cannot be greater than n')
-    if type(P) is not np.ndarray:
+    if type(P) is not np.ndarray or len(P.shape) != 1:
         raise TypeError('P must be a 1D numpy.ndarray')
     if not (np.all(P >= 0) and np.all(P <= 1)):
         raise ValueError('All values in P must be in the range [0, 1]')
