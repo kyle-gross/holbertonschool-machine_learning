@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Contains the function intersection()"""
+"""Contains the functions likelihood() and intersection()"""
 
 import numpy as np
 
 
-def intersection(x, n, P, Pr):
+def marginal(x, n, P, Pr):
     """Calculates the intersection of obtaining the data with various
     hypothetical probabilities
 
@@ -49,4 +49,6 @@ def intersection(x, n, P, Pr):
 
     intersection = likelihood * Pr
 
-    return intersection
+    marginal = np.sum(intersection)
+
+    return marginal
