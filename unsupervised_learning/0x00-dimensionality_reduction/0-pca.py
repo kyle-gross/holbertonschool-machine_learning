@@ -23,6 +23,6 @@ def pca(X, var=0.95):
     U, Sigma, Vh = np.linalg.svd(X)
     variance_cumsum = np.cumsum(Sigma) / np.sum(Sigma)
     nd = np.argwhere(variance_cumsum >= var)
-    W = Vh[:(nd[0,0]+1)].T
+    W = Vh[:(nd[0, 0]+1)].T
 
     return W
