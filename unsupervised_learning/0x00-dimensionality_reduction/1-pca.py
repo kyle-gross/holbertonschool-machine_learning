@@ -20,5 +20,6 @@ def pca(X, ndim):
     U, Sigma, Vh = np.linalg.svd(X_meaned)
     Vh = Vh.T
     W = Vh[:, :ndim]
+    T = np.dot(X_meaned, W)
 
-    return np.dot(X_meaned, W)
+    return T
