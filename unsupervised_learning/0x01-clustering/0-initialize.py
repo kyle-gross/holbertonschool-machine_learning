@@ -20,7 +20,7 @@ def initialize(X, k):
             d: no. dimensions for each cluster
     """
     if (type(X) is not np.ndarray or type(k) is not int or k <= 0 or
-        k > X.shape[0]):
+       k > X.shape[0] or len(X.shape) != 2):
         return None
 
     n, d = X.shape
