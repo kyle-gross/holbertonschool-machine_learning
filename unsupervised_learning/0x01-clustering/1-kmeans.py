@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Contains the function kmeans()"""
 
-from typing import DefaultDict
 import numpy as np
 
 
