@@ -21,8 +21,11 @@ def kmeans(X, k, iterations=1000):
                 point belongs to
         None, None if failure
     """
-    if (type(X) is not np.ndarray or type(k) is not int or k <= 0 or
-       k > X.shape[0] or len(X.shape) != 2):
+    if type(X) is not np.ndarray or len(X.shape) != 2:
+        return None, None
+    if type(k) is not int or k <= 0 or k > X.shape[0]:
+        return None, None
+    if type(iterations) is not int or iterations <= 0:
         return None, None
 
     n, d = X.shape
@@ -44,5 +47,8 @@ def kmeans(X, k, iterations=1000):
                 centroids[j] = np.mean(X[j == clss], axis=0)
         if np.array_equal(prev, centroids):
             break
+
+    distances = np.sqrt(((X - centroids[:, np.newaxis])**2).sum(axis=2))
+    clss = np.argmin(distances, axis=0)
 
     return centroids, clss
