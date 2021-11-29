@@ -19,8 +19,12 @@ def variance(X, C):
        type(C) is not np.ndarray or C.ndim != 2):
         return None
 
-    distances = np.linalg.norm(X - np.expand_dims(C, 1), axis=-1)
-    min = distances.min(axis=0)
-    var = np.sum(np.square(min))
+    try:
+        distances = np.linalg.norm(X - np.expand_dims(C, 1), axis=-1)
+        min = distances.min(axis=0)
+        var = np.sum(np.square(min))
 
-    return var
+        return var
+
+    except Exception:
+        return None
