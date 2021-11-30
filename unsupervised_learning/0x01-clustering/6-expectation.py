@@ -28,9 +28,10 @@ def expectation(X, pi, m, S):
 
     k = pi.shape[0]
 
-    pdfs = []
-
     pdfs = [pdf(X, m[i], S[i]) * pi[i] for i in range(k)]
+
+    if pdfs is None:
+        return None
 
     g = np.array(pdfs)  # Probabilities
     likelihood = g.sum(axis=0)
