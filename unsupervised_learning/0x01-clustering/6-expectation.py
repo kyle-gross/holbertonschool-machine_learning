@@ -30,7 +30,7 @@ def expectation(X, pi, m, S):
 
     pdfs = [pdf(X, m[i], S[i]) * pi[i] for i in range(k)]
 
-    if pdfs is None:
+    if any(pdfs) is None:
         return None, None
 
     g = np.array(pdfs)  # Probabilities
