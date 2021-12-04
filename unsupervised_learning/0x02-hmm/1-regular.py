@@ -24,5 +24,5 @@ def regular(P):
     evec1 = evecs[:, np.isclose(evals, 1)]
     evec1 = evec1[:, 0]
     steady = evec1 / evec1.sum()
-    
+
     return np.array([steady])
