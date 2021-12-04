@@ -11,7 +11,7 @@ def regular(P):
         P (ndarray)(n,n): transition matrix
             P[i,j]: probability of transitioning from state i to state j
             n: no. states in markov chain
-    
+
     Returns:
         steady // None if failure
         steady (ndarray)(1,n): steady state probabilities
@@ -24,5 +24,5 @@ def regular(P):
     evec1 = evecs[:, np.isclose(evals, 1)]
     evec1 = evec1[:, 0]
     steady = evec1 / evec1.sum()
-
-    return steady
+    
+    return np.array([steady])
