@@ -35,7 +35,7 @@ def absorbing(P):
         return True
 
     keys = [i for i in range(len(diag)) if diag[i] == 1]
-    
+
     for i in range(P.shape[0]):
         if i in keys:
             keys = get_to_abs_state(keys, i, P)
