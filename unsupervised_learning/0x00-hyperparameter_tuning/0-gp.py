@@ -7,12 +7,12 @@ import numpy as np
 class GaussianProcess:
     """Represents a noiseless 1D Gaussian Process"""
     def __init__(self, X_init, Y_init, l=1, sigma_f=1):
-        """Sets public instance attributes X, Y, l, and sigma_f"""
+        """Sets public instance attributes X, Y, l, sigma_f, and K"""
         self.X = X_init
         self.Y = Y_init
         self.l = l
         self.sigma_f = sigma_f
-        self.K = self.kernel(X_init, Y_init)
+        self.K = self.kernel(X_init, X_init)
 
     def kernel(self, X1, X2):
         """Calculates the covariance kernel matrix between two matrices using
@@ -25,6 +25,6 @@ class GaussianProcess:
         Returns:
             K (ndarray)(m,n): covariance kernel matrix
         """
-        l = self.l
-        K = np.exp(-((X1-X2.T)**2) / (2*(l**2)))
-        return K * (self.sigma_f**2)
+        K = np.exp(-((X1 - X2.T)**2) / (2 * (self.l**2)))
+        K *= (self.sigma_f**2)
+        return K
