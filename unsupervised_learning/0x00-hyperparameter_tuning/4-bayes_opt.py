@@ -42,7 +42,7 @@ class BayesianOptimization:
 
     def acquisition(self):
         """Calculates the next best sample location
-        
+
         Returns:
             X_next, EI
             X_next (ndarray)(1,): next best sample point
