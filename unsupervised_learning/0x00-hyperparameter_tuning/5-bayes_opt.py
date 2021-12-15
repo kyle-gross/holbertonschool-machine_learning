@@ -73,17 +73,19 @@ class BayesianOptimization:
             X_opt (ndarray)(1,): optimal point
             Y_opt (ndarray)(1,): optimal function value
         """
+        X = []
         prev = []
 
         for _ in range(iterations):
             X_next, _ = self.acquisition()
+            X.append(X_next)
             prev.append(self.f(X_next))
             if X_next in self.gp.X:
                 break
 
             self.gp.update(X_next, self.f(X_next))
 
-        X_opt = self.gp.X[np.argmin(prev)]
-        Y_opt = self.gp.Y[np.argmin(prev)]
+        X_opt = X[np.argmin(prev)]
+        Y_opt = self.gp.Y[np.argmin(self.gp.Y)]
 
         return X_opt, Y_opt
