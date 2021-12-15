@@ -59,7 +59,6 @@ class BayesianOptimization:
         N = opt - mu_s - self.xsi
         N_sig = N / sigma
         EI = ((N * norm.cdf(N_sig) + (sigma * norm.pdf(N_sig))))
-        EI[sigma == 0.0] = 0.0
 
         return self.X_s[np.argmax(EI)], np.array(EI)
 
@@ -83,7 +82,7 @@ class BayesianOptimization:
                 break
 
             self.gp.update(X_next, self.f(X_next))
-        
+
         X_opt = self.gp.X[np.argmin(prev)]
         Y_opt = self.gp.Y[np.argmin(prev)]
 
