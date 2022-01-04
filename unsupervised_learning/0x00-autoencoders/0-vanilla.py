@@ -20,8 +20,6 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
         auto: full autoencoder model
     """
     x = keras.layers.Input(shape=(input_dims,))
-    x_encoded = keras.Input(shape=(latent_dims,))
-    x_decoded = x_encoded
 
     encoded = keras.layers.Dense(hidden_layers[0], activation='relu')(x)
 
@@ -30,10 +28,9 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
             hidden_layers[i], activation='relu'
         )(encoded)
     encoded = keras.layers.Dense(latent_dims, activation='relu')(encoded)
-    
-    decoded = keras.layers.Dense(
-        hidden_layers[-1], activation='relu'
-    )(x_decoded)
+
+    decoded = keras.layers.Input(shape=(latent_dims,))
+    x_decoded = decoded
 
     for i in range(len(hidden_layers) - 1, -1, -1):
         decoded = keras.layers.Dense(
@@ -41,8 +38,8 @@ def autoencoder(input_dims, hidden_layers, latent_dims):
         )(decoded)
     decoded = keras.layers.Dense(input_dims, activation='sigmoid')(decoded)
 
-    encoder = keras.models.Model(x, encoded)
-    decoder = keras.models.Model(x_encoded, decoded)
+    encoder = keras.Model(x, encoded)
+    decoder = keras.Model(x_decoded, decoded)
     auto = keras.Model(x, decoder(encoder(x)))
 
     auto.compile(optimizer='adam', loss='binary_crossentropy')
