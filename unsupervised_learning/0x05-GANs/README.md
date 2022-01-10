@@ -9,7 +9,7 @@
 * [GAN Medium Article](https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f#.sch4xgsa9 "GAN Medium Article")
 * [Real Python Guide](https://realpython.com/generative-adversarial-networks/#checking-the-samples-generated-by-the-gan "Real Python Guide")
 * [TDS Simple GAN](https://towardsdatascience.com/build-a-super-simple-gan-in-pytorch-54ba349920e4 "TDS Simple GAN")
-* [Append to Torch Tensor](https://discuss.pytorch.org/t/appending-to-a-tensor/2665/5 "Append to torch tensor")\
+* [Append to Torch Tensor](https://discuss.pytorch.org/t/appending-to-a-tensor/2665/5 "Append to torch tensor")
 * [DCGAN Faces Tutorial](https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html "DCGAN Faces Tutorial")
 
 
