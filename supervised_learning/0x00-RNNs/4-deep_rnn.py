@@ -33,7 +33,7 @@ def deep_rnn(rnn_cells, X, h_0):
             if i == 0:
                 x = X[t]
             else:
-                x = H[t + 1, l - 1]
+                x = H[t + 1, i - 1]
             H[t + 1, i], y = rnn_cells[i].forward(h_next[i], x)
         Y.append(y)
         h_next = H[t + 1]
