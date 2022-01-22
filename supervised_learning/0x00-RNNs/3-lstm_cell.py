@@ -42,17 +42,17 @@ class LSTMCell():
 
     def forward(self, h_prev, c_prev, x_t):
         """Forward propagation"""
-        combo = np.concatenate((h_prev, x_t), axis=1)
+        concat = np.concatenate((h_prev, x_t), axis=1)
 
         # Forget gate
-        forget = self.sigmoid(np.dot(combo, self.Wf) + self.bf)
+        forget = self.sigmoid(np.dot(concat, self.Wf) + self.bf)
         # Update gate
-        update = self.sigmoid(np.dot(combo, self.Wu) + self.bu)
+        update = self.sigmoid(np.dot(concat, self.Wu) + self.bu)
         # Candidate
-        candidate = np.tanh(np.dot(combo, self.Wc) + self.bc)
-        # Output gate
-        output = self.sigmoid(np.dot(combo, self.Wo) + self.bc)
+        candidate = np.tanh(np.dot(concat, self.Wc) + self.bc)
         c_next = (forget * c_prev) + (update * candidate)
+        # Output gate
+        output = self.sigmoid(np.dot(concat, self.Wo) + self.bo)
         h_next = output * np.tanh(c_next)
 
         y = self.softmax(np.dot(h_next, self.Wy) + self.by)
