@@ -75,6 +75,6 @@ class BidirectionalCell():
         Returns:
             Y: the outputs
         """
-        Y = [self.softmax(np.dot(H, self.Wy) + self.by) for h in H]
+        Y = [self.softmax(np.dot(h, self.Wy) + self.by) for h in H]
 
         return np.array(Y)
