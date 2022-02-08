@@ -2,7 +2,6 @@
 """Contains the function tf_idf()"""
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-from torch import embedding
 
 
 def tf_idf(sentences, vocab=None):
