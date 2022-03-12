@@ -7,6 +7,8 @@
 * Broadcasting
 * Introduction to `numpy` library
 
+---
+
 ## [Advanced Linear Algebra](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x00-advanced_linear_algebra "Advanced Linear Algebra")
 
 * More matrix operations
@@ -14,9 +16,13 @@
 * Matrix inverse
 * Adjugate matrix
 
+---
+
 ## [Plotting](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x01-plotting "Plotting")
 
 * Introduction to Matplotlib
+
+---
 
 ## [Calculus](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x02-calculus "Calculus")
 
@@ -25,6 +31,8 @@
 * Derivatives
 * Chain rule
 
+---
+
 ## [Probability](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x03-probability "Probability")
 
 * Distributions
@@ -32,10 +40,14 @@
 * Probability theory
 * Variance
 
+---
+
 ## [Bayesian Probability](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x02-bayesian_prob "Bayesian Probability")
 
 * Maximum likelihood
 * Normal distributions
+
+---
 
 ## [Convolutions and Pooling](https://github.com/kyle-gross/holbertonschool-machine_learning/tree/main/math/0x03-convolutions_and_pooling "Convolutions and Pooling")
 
