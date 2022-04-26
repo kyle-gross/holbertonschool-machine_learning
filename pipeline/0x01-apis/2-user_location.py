@@ -20,7 +20,7 @@ if __name__ == '__main__':
         if r.status_code == 200:
             location = r.json()['location']
             if location is not None:
-                print(f'{location}')
+                print('{}'.format(location))
             else:
                 print('Not found')
     else:
