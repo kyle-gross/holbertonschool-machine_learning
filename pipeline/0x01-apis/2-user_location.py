@@ -16,7 +16,7 @@ if __name__ == '__main__':
         if r.status_code == 403:
             reset_time = int(r.headers['X-Ratelimit-Reset']) - time.time()
             minutes = round(reset_time / 60)
-            print(f'Reset in {minutes} min')
+            print('Reset in {} min'.format(minutes))
         if r.status_code == 200:
             location = r.json()['location']
             if location is not None:
