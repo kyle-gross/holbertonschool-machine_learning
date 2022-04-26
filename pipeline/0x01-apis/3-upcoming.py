@@ -15,13 +15,13 @@ if __name__ == '__main__':
 
     name = next_launch['name']
     date = next_launch['date_local']
-    rocket = next_launch['rocket']
-    launchpad = next_launch['launchpad']
 
+    rocket = next_launch['rocket']
     rocket = requests.get(
         'https://api.spacexdata.com/v4/rockets/{}'.format(rocket)
     ).json()['name']
 
+    launchpad = next_launch['launchpad']
     launchpad = requests.get(
         'https://api.spacexdata.com/v4/launchpads/{}'.format(launchpad)
     ).json()
