@@ -22,6 +22,6 @@ if __name__ == '__main__':
             rocket_launches[name] += 1
 
     rocket_launches = sorted(rocket_launches.items(), key=lambda x: x[1])
-    
+
     for k, v in reversed(rocket_launches):
         print('{}: {}'.format(k, v))
