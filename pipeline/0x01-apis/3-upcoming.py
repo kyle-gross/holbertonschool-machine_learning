@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """This script displays upcoming launch information from the SpaceX API"""
 
-from click import launch
 import requests
 
 
