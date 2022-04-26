@@ -18,17 +18,15 @@ if __name__ == '__main__':
     rocket = next_launch['rocket']
     launchpad = next_launch['launchpad']
 
-    if rocket:
-        rocket = requests.get(
-            'https://api.spacexdata.com/v4/rockets/{}'.format(rocket)
-        ).json()['name']
+    rocket = requests.get(
+        'https://api.spacexdata.com/v4/rockets/{}'.format(rocket)
+    ).json()['name']
 
-    if launchpad:
-        launchpad = requests.get(
-            'https://api.spacexdata.com/v4/launchpads/{}'.format(launchpad)
-        ).json()
-        pad_name = launchpad['name']
-        location = launchpad['locality']
+    launchpad = requests.get(
+        'https://api.spacexdata.com/v4/launchpads/{}'.format(launchpad)
+    ).json()
+    pad_name = launchpad['name']
+    location = launchpad['locality']
 
     print('{} ({}) {} - {} ({})'.format(
         name, date, rocket, pad_name, location
