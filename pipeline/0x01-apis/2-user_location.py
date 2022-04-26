@@ -9,6 +9,7 @@ import time
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         exit()
+
     user = sys.argv[1]
     r = requests.get(user)
 
