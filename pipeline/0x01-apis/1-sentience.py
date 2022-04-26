@@ -14,13 +14,14 @@ def sentientPlanets():
         r = requests.get(url).json()
         for species in r['results']:
             if (species['designation'] == 'sentient' and
-                species['homeworld'] is not None):
+               species['homeworld'] is not None):
                 planets.append(requests.get(
                     species['homeworld']
                 ).json()['name'])
         url = r.get('next')
 
     return planets
+
 
 if __name__ == '__main__':
     planets = sentientPlanets()

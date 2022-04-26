@@ -15,7 +15,8 @@ def availableShips(passengerCount):
         r = requests.get(url).json()
         for result in r['results']:
             try:
-                if int(result['passengers'].replace(',', '')) >= passengerCount:
+                if int(result['passengers'].replace(',', ''))\
+                   >= passengerCount:
                     ships.append(result['name'])
             except Exception as e:
                 continue
