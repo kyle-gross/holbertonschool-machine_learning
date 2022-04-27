@@ -5,8 +5,12 @@ import requests
 
 
 if __name__ == '__main__':
-    url = 'https://api.spacexdata.com/v4/launches/next'
-    next_launch = requests.get(url).json()
+    url = 'https://api.spacexdata.com/v4/launches/upcoming'
+    r = requests.get(url).json()
+
+    dates = [launch['date_local'] for launch in r]
+    next_launch_date = sorted(dates)[0]
+    next_launch = r[dates.index(next_launch_date)]
 
     name = next_launch['name']
     date = next_launch['date_local']
