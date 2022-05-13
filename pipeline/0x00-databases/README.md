@@ -404,5 +404,8 @@ $ ./33-schools_by_topic.py
 Run with:
 
 ```bash
-
+$ curl -o dump.zip -s "https://s3.amazonaws.com/intranet-projects-files/holbertonschool-webstack/411/dump.zip"
+$ unzip dump.zip
+$ mongorestore dump
+$ ./34-log_stats.py
 ```
