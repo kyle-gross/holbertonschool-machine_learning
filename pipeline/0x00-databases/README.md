@@ -303,7 +303,7 @@ $ echo "SELECT (a / b) FROM numbers;" | mysql -uroot -p holberton
 0.75
 ```
 
-### [22. List all databases]( "22. List all databases")
+### [22. List all databases](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/22-list_databases "22. List all databases")
 
 Run with:
 
@@ -311,7 +311,7 @@ Run with:
 $ cat 22-list_databases | mongo
 ```
 
-### [23. Create a database]( "23. Create a database")
+### [23. Create a database](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/23-use_or_create_database "23. Create a database")
 
 Run with:
 
@@ -319,7 +319,7 @@ Run with:
 $ cat 23-use_or_create_database | mongo
 ```
 
-### [24. Insert document]("24. Insert document")
+### [24. Insert document](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/24-insert "24. Insert document")
 
 Run with:
 
@@ -327,7 +327,7 @@ Run with:
 $ cat 24-insert | mongo my_db
 ```
 
-### [25. All documents]( "25. All documents")
+### [25. All documents](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/25-all "25. All documents")
 
 Run with:
 
@@ -335,7 +335,7 @@ Run with:
 $ cat 25-all | mongo my_db
 ```
 
-### [26. All matches]( "26. All matches")
+### [26. All matches](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/26-match "26. All matches")
 
 Run with:
 
@@ -343,7 +343,7 @@ Run with:
 $ cat 26-match | mongo my_db
 ```
 
-### [27. Count]( "27. Count")
+### [27. Count](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/27-count "27. Count")
 
 Run with:
 
@@ -351,7 +351,7 @@ Run with:
 $ cat 27-count | mongo my_db
 ```
 
-### [28. Update]( "28. Update")
+### [28. Update](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/28-update "28. Update")
 
 Run with:
 
@@ -359,7 +359,7 @@ Run with:
 $ cat 28-update | mongo my_db
 ```
 
-### [29. Delete by match]( "29. Delete by match")
+### [29. Delete by match](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/29-delete "29. Delete by match")
 
 Run with:
 
@@ -367,7 +367,7 @@ Run with:
 $ cat 29-delete | mongo my_db
 ```
 
-### [30. List all documents in Python]( "30. List all documents in Python")
+### [30. List all documents in Python](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/30-all.py "30. List all documents in Python")
 
 Run with:
 
@@ -375,7 +375,7 @@ Run with:
 $ ./30-all.py
 ```
 
-### [31. Insert a document in Python]( "31. Insert a document in Python")
+### [31. Insert a document in Python](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/31-insert_school.py "31. Insert a document in Python")
 
 Run with:
 
@@ -383,7 +383,7 @@ Run with:
 $ ./31-insert_school.py
 ```
 
-### [32. Change school topics]( "32. Change school topics")
+### [32. Change school topics](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/32-update_topics.py "32. Change school topics")
 
 Run with:
 
@@ -391,7 +391,7 @@ Run with:
 $ ./32-update_topics.py
 ```
 
-### [33. Where can I learn Python?]( "33. Where can I learn Python?")
+### [33. Where can I learn Python?](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/33-schools_by_topic.py "33. Where can I learn Python?")
 
 Run with:
 
@@ -399,7 +399,7 @@ Run with:
 $ ./33-schools_by_topic.py
 ```
 
-### [34. Log stats]( "34. Log stats")
+### [34. Log stats](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/34-log_stats.py "34. Log stats")
 
 Run with:
 
