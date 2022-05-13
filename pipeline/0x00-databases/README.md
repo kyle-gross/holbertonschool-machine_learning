@@ -6,7 +6,7 @@
 
 ## Tasks
 
-### [0. Create a database]( "")
+### [0. Create a database](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/0-create_database_if_missing.sql "0. Create a database")
 
 Run with:
 
@@ -14,7 +14,7 @@ Run with:
 $ cat 0-create_database_if_missing.sql | mysql -hlocalhost -uroot -p
 ```
 
-### [1. First table]( "1. First table")
+### [1. First table](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/1-first_table.sql "1. First table")
 
 Run with:
 
@@ -22,7 +22,7 @@ Run with:
 $ cat 1-first_table.sql | mysql -hlocalhost -uroot -p db_0
 ```
 
-### [2. List all in table]( "2. List all in table")
+### [2. List all in table](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/2-list_values.sql "2. List all in table")
 
 Run with:
 
@@ -30,7 +30,7 @@ Run with:
 $ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
 ```
 
-### [3. First add]( "3. First add")
+### [3. First add](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/3-insert_value.sql "3. First add")
 
 Run with:
 
@@ -39,7 +39,7 @@ $ cat 3-insert_value.sql | mysql -hlocalhost -uroot -p db_0
 $ cat 2-list_values.sql | mysql -hlocalhost -uroot -p db_0
 ```
 
-### [4. Select the best]( "4. Select the best")
+### [4. Select the best](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/4-best_score.sql "4. Select the best")
 
 Run with:
 
@@ -63,7 +63,7 @@ score   name
 10      John
 ```
 
-### [5. Average]( "5. Average")
+### [5. Average](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/5-average.sql "5. Average")
 
 Run with (uses previous setup.sql file):
 
@@ -73,7 +73,7 @@ average
 9.25
 ```
 
-### [6. Temperatures #0]( "6. Temperatures #0")
+### [6. Temperatures #0](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/6-avg_temperatures.sql "6. Temperatures #0")
 
 Setup and run with:
 
@@ -87,7 +87,7 @@ Chandler    72.8627
 Peoria  66.5392
 ```
 
-### [7. Temperatures #2]( "7. Temperatures #2")
+### [7. Temperatures #2](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/7-max_state.sql "7. Temperatures #2")
 
 Use previous commands to create hbtn_0c_0 DB.
 
@@ -101,7 +101,7 @@ CA      110
 IL      110
 ```
 
-### [8. Genre ID by show]( "8. Genre ID by show")
+### [8. Genre ID by show](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/8-genre_id_by_show.sql "8. Genre ID by show")
 
 Setup and run with:
 
@@ -115,7 +115,7 @@ Breaking Bad    1
 The Last Man on Earth   5
 ```
 
-### [9. No genre]( "9. No genre")
+### [9. No genre](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/9-no_genre.sql "9. No genre")
 
 Use previous commands to create hbtn_0d_tvshows DB.
 
@@ -128,7 +128,7 @@ Better Call Saul        NULL
 Homeland        NULL
 ```
 
-### [10. Number of shows by genre]( "10. Number of shows by genre")
+### [10. Number of shows by genre](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/10-count_shows_by_genre.sql "10. Number of shows by genre")
 
 Use previous commands to create hbtn_0d_tvshows DB.
 
@@ -142,7 +142,7 @@ Drama   5
 Fantasy 1
 ```
 
-### [11. Rotten tomatoes]( "11. Rotten tomatoes")
+### [11. Rotten tomatoes](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/11-rating_shows.sql "11. Rotten tomatoes")
 
 Setup and run with:
 
@@ -156,7 +156,7 @@ Better Call Saul    163
 New Girl    0
 ```
 
-### [12. Best genre]( "12. Best genre")
+### [12. Best genre](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/12-rating_genres.sql "12. Best genre")
 
 Use previous commands to create hbtn_0d_tvshows_rate DB.
 
@@ -170,7 +170,7 @@ Drama   150
 Thriller    40
 ```
 
-### [13. We are all unique!]( "13. We are all unique!")
+### [13. We are all unique!](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/13-uniq_users.sql "13. We are all unique!")
 
 Run with:
 
@@ -188,7 +188,7 @@ id  email   name
 2   sylvie@dylan.com    Sylvie
 ```
 
-### [14. In and not out]( "14. In and not out")
+### [14. In and not out](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/14-country_users.sql "14. In and not out")
 
 Run with:
 
@@ -209,7 +209,7 @@ id  email   name    country
 3   john@dylan.com  John    US
 ```
 
-### [15. Best band ever!]( "15. Best band ever!")
+### [15. Best band ever!](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/15-fans.sql "15. Best band ever!")
 
 Run with:
 
@@ -222,7 +222,7 @@ USA 99349
 Italy   7178
 ```
 
-### [16. Old school band]( "16. Old school band")
+### [16. Old school band](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/16-glam_rock.sql "16. Old school band")
 
 Run with:
 
@@ -235,7 +235,7 @@ Alice Cooper    56
 Hanoi Rocks 0
 ```
 
-### [17. Buy buy buy]( "17. Buy buy buy")
+### [17. Buy buy buy](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/17-store.sql "17. Buy buy buy")
 
 Run with:
 
@@ -249,7 +249,7 @@ apple   10
 pear    2
 ```
 
-### [18. Email validation to sent]( "18. Email validation to sent)
+### [18. Email validation to sent](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/18-valid_email.sql "18. Email validation to sent")
 
 Run with:
 
@@ -263,7 +263,7 @@ id  email   name    valid_email
 3   jeanne@dylan.com    Jannis  1
 ```
 
-### [19. Add bonus]( "19. Add bonus")
+### [19. Add bonus](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/19-bonus.sql "19. Add bonus")
 
 Run with:
 
@@ -276,7 +276,7 @@ id  name
 2   4   90
 ```
 
-### [20. Average score]( "20. Average score")
+### [20. Average score](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/20-average_score.sql "20. Average score")
 
 Run with:
 
@@ -289,7 +289,7 @@ id  name    average_score
 2   Jeanne  82
 ```
 
-### [21. Safe divide]( "21. Safe divide")
+### [21. Safe divide](https://github.com/kyle-gross/holbertonschool-machine_learning/blob/main/pipeline/0x00-databases/21-div.sql "21. Safe divide")
 
 Run with:
 
