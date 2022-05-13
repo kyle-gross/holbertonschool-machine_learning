@@ -3,6 +3,7 @@
 ## Resources
 
 * [SQL Operators](https://www.w3schools.com/sql/sql_operators.asp "SQL Operators")
+* [Install MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/ "Install MongoDB")
 
 ## Tasks
 
@@ -300,4 +301,108 @@ $ echo "SELECT (a / b) FROM numbers;" | mysql -uroot -p holberton
 (a / b)
 ...
 0.75
+```
+
+### [22. List all databases]( "22. List all databases")
+
+Run with:
+
+```bash
+$ cat 22-list_databases | mongo
+```
+
+### [23. Create a database]( "23. Create a database")
+
+Run with:
+
+```bash
+$ cat 23-use_or_create_database | mongo
+```
+
+### [24. Insert document]("24. Insert document")
+
+Run with:
+
+```bash
+$ cat 24-insert | mongo my_db
+```
+
+### [25. All documents]( "25. All documents")
+
+Run with:
+
+```bash
+$ cat 25-all | mongo my_db
+```
+
+### [26. All matches]( "26. All matches")
+
+Run with:
+
+```bash
+$ cat 26-match | mongo my_db
+```
+
+### [27. Count]( "27. Count")
+
+Run with:
+
+```bash
+$ cat 27-count | mongo my_db
+```
+
+### [28. Update]( "28. Update")
+
+Run with:
+
+```bash
+$ cat 28-update | mongo my_db
+```
+
+### [29. Delete by match]( "29. Delete by match")
+
+Run with:
+
+```bash
+$ cat 29-delete | mongo my_db
+```
+
+### [30. List all documents in Python]( "30. List all documents in Python")
+
+Run with:
+
+```bash
+$ ./30-all.py
+```
+
+### [31. Insert a document in Python]( "31. Insert a document in Python")
+
+Run with:
+
+```bash
+$ ./31-insert_school.py
+```
+
+### [32. Change school topics]( "32. Change school topics")
+
+Run with:
+
+```bash
+$ ./32-update_topics.py
+```
+
+### [33. Where can I learn Python?]( "33. Where can I learn Python?")
+
+Run with:
+
+```bash
+$ ./33-schools_by_topic.py
+```
+
+### [34. Log stats]( "34. Log stats")
+
+Run with:
+
+```bash
+
 ```
