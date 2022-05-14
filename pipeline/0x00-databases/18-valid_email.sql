@@ -8,5 +8,5 @@ CREATE TRIGGER change_email
         IF (old.email <> new.email) THEN
             SET new.valid_email = 0
         END IF;
-    END;
+    END //
 DELIMITER ;
