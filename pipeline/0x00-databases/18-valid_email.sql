@@ -5,7 +5,7 @@ CREATE TRIGGER change_email
     ON users
     FOR EACH ROW
     BEGIN
-        IF (old.email <> new.email) THEN
+        IF STRCMP(old.email, new.email) <> 0 THEN
             SET new.valid_email = 0
         END IF;
     END //
